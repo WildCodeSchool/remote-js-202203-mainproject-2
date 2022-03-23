@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/app.css">
+    <link rel="stylesheet" href="./assets/styles/home.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="mainApp">
+
+        <header>
+            <div id="mainUser">
+                <figure>
+                    <img src="./assets/images/avatars/patrick-chirac.jpg" alt="Patrick Chirac" title="Patrick Chirac">
+                    <figcaption>
+                        <h2>Hello <span>Patrick</span></h2>
+                        <h3>Let's find your favorite movie</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </header>
+
+        <div id="home">
+            <div class="wrapper-home">
+                
+                <div id="searchBar">
+                    <form action="#">
+                        <fieldset>
+                            <input type="search" placeholder="Movie, genre, country…">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div id="genreFilters">
+                    <div class="wrapper">
+                        <div class="genres-list">
+                            <button>All</button>
+                            <button>Action</button>
+                            <button>Comedy</button>
+                            <button>Fantasy</button>
+                            <button>Horror</button>
+                            <button>Mystery</button>
+                            <button>Romance</button>
+                            <button>Sci-Fi</button>
+                            <button>Thriller</button>
+                            <button>Western</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="moviesReturned">
+                    <div class="scrollable">
+                        <div class="wrapper">
+                            
+                            <div id="searchResults">
+                                <h4>Search Results </h4>
+                                <div class="wrapper">
+                                    <div class="results-list">
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="The curious case of Benjamin Button" title="The curious case of Benjamin Button" style="background-image: url(./assets/images/posters/the-curious-case-of-benjamin-button.jpg);">
+                                                <figcaption>
+                                                    <strong>The curious case of Benjamin Button</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 7.8</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Back to the Future" title="Back to the Future" style="background-image: url(./assets/images/posters/back-to-the-future.jpg);">
+                                                <figcaption>
+                                                    <strong>Back to the Future</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 8.6</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Jaws" title="Jaws" style="background-image: url(./assets/images/posters/jaws.jpg);">
+                                                <figcaption>
+                                                    <strong>Jaws</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 8.1</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Justice League" title="Justice League" style="background-image: url(./assets/images/posters/justice-league.jpg);">
+                                                <figcaption>
+                                                    <strong>Justice League</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 6.1</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Suicide Squad" title="Suicide Squad" style="background-image: url(./assets/images/posters/suicide-squad.jpg);">
+                                                <figcaption>
+                                                    <strong>Suicide Squad</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 5.9</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Grimsby" title="Grimsby" style="background-image: url(./assets/images/posters/grimsby.jpg);">
+                                                <figcaption>
+                                                    <strong>Grimsby</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 6.2</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Jurassic Park" title="Jurassic Park" style="background-image: url(./assets/images/posters/jurassic-park.jpg);">
+                                                <figcaption>
+                                                    <strong>Jurassic Park</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 8.2</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="Kelly Madison" title="Kelly Madison" style="background-image: url(./assets/images/posters/kelly-madison.jpg);">
+                                                <figcaption>
+                                                    <strong>Kelly Madison</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 9.9</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="movie-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-poster.png" alt="La finale" title="La finale" style="background-image: url(./assets/images/posters/la-finale.jpg);">
+                                                <figcaption>
+                                                    <strong>La finale</strong>
+                                                    <span><i class="fa-solid fa-star"></i> 5.8</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="moreMovies">
+                                
+                                <div id="newRelease" class="landscape-push">
+                                    <h4>New Release</h4>
+                                    <div class="wrapper">
+                                        <div class="landscape-list">
+                                            <div class="landscape-card">
+                                                <figure>
+                                                    <img src="./assets/images/template/blank-release.png" alt="The Lord of the Rings: The Rings of Power" title="The Lord of the Rings: The Rings of Power" style="background-image: url(./assets/images/release/rings-of-power.jpg);">
+                                                    <figcaption>
+                                                        <strong>The Lord of the Rings: The Rings of Power</strong>
+                                                        <span class="no-stonks"><i class="fa-solid fa-arrow-trend-down"></i> 132</span>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                            <div class="landscape-card">
+                                                <figure>
+                                                    <img src="./assets/images/template/blank-release.png" alt="Dune" title="Dune" style="background-image: url(./assets/images/release/dune-2021.jpg);">
+                                                    <figcaption>
+                                                        <strong>Dune</strong>
+                                                        <span><i class="fa-solid fa-star"></i> 8.1</span>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="justForYou" class="landscape-push">
+                                    <h4>Just For You</h4>
+                                    <div class="wrapper">
+                                        <div class="landscape-list">
+                                            <div class="landscape-card">
+                                                <figure>
+                                                    <img src="./assets/images/template/blank-release.png" alt="Looper" title="Looper" style="background-image: url(./assets/images/release/looper.jpg);">
+                                                    <figcaption>
+                                                        <strong>Looper</strong>
+                                                        <span><i class="fa-solid fa-star"></i> 7.4</span>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                            <div class="landscape-card">
+                                                <figure>
+                                                    <img src="./assets/images/template/blank-release.png" alt="Land of mine" title="Land of mine" style="background-image: url(./assets/images/release/land-of-mine.jpg);">
+                                                    <figcaption>
+                                                        <strong>Land of mine</strong>
+                                                        <span><i class="fa-solid fa-star"></i> 7.8</span>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <nav>
+            <button class="active"><i class="fa-solid fa-house"></i></button>
+            <button><i class="fa-solid fa-film"></i></button>
+            <button><i class="fa-solid fa-heart"></i></button>
+            <button><i class="fa-solid fa-shuffle"></i></button>
+            <button><i class="fa-solid fa-user"></i></button>
+        </nav>
+
+    </section>
+
+</body>
+</html>
