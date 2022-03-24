@@ -19,8 +19,8 @@
     ],
     "rules": {
         "quotes": [
-            "error",
-            "single"
+        "error",
+        "single"
         ],
         "semi": [
             "error",

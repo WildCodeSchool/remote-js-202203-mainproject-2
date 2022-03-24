@@ -1,5 +1,5 @@
 function SplashScreen(){
-    return (
+    return(
         <h1>SplashScreen</h1>
     );
 }

@@ -1,0 +1,319 @@
+#home {
+    flex-grow: 1;
+    padding: 0 25px;
+    background: var(--base-darkblue);
+}
+
+#home .wrapper-home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#moviesReturned {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+#moviesReturned .scrollable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#moviesReturned .scrollable::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.movie-push {
+    width: 100%;
+}
+
+.movie-push h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--base-white);
+}
+
+.movie-push .wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie-push .wrapper .movie-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.movie-push .wrapper .movie-list::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.movie-push .wrapper .movie-list .movie-card {
+    width: 147px;
+    margin: 0 20px 0 0;
+}
+
+.movie-push .wrapper .movie-list .movie-card figure {
+    position: relative;
+    width: var(--movie-width);
+}
+
+.movie-push .wrapper .movie-list .movie-card figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(32, 15, 51, 1) 85%);
+    background: -webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(32, 15, 51, 1) 85%);
+    background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(32, 15, 51, 1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#200f33', GradientType=0);
+    z-index: 1;
+}
+
+.movie-push .wrapper .movie-list .movie-card figure img {
+    display: block;
+    width: 147px;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.movie-push .wrapper .movie-list .movie-card figure figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.movie-push .wrapper .movie-list .movie-card figure figcaption strong {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--base-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-push .wrapper .movie-list .movie-card figure figcaption span {
+    font-size: 12px;
+    color: var(--base-yellowscore);
+}
+
+
+
+
+#moreMovies {
+    width: 100%;
+}
+
+#moreMovies .landscape-push {
+    width: 100%;
+}
+
+#moreMovies .landscape-push h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--base-white);
+}
+
+#moreMovies .landscape-push .wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card {
+    width: 288px;
+    margin: 0 20px 0 0;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure {
+    position: relative;
+    width: 288px;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(32, 15, 51, 1) 85%);
+    background: -webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(32, 15, 51, 1) 85%);
+    background: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(32, 15, 51, 1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#200f33', GradientType=0);
+    z-index: 1;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure img {
+    display: block;
+    width: 288px;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    z-index: 2;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption strong {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--base-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption span {
+    font-size: 12px;
+    color: var(--base-yellowscore);
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption span.stonks {
+    color: var(--base-greenstonks);
+}
+
+#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption span.no-stonks {
+    color: var(--base-rednostonks);
+}
+
+
+
+
+
+
+
+
+
+
+#searchBar {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#searchBar form {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#searchBar form fieldset {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#searchBar form fieldset input {
+    flex-grow: 1;
+    height: 36px;
+    padding: 0 0 0 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background: var(--base-mediumpurple);
+}
+
+#searchBar form fieldset button {
+    height: 36px;
+    color: var(--base-white);
+    padding: 0 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background: var(--base-mediumpurple);
+}
+
+
+#genreFilters {
+    width: 100%;
+}
+
+#genreFilters .wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+#genreFilters .wrapper .genres-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#genreFilters .wrapper .genres-list::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+#genreFilters .wrapper .genres-list button {
+    margin: 0 10px 0 0;
+    font-size: 16px;
+    color: var(--base-white);
+    white-space: nowrap;
+    border: none;
+    background: none;
+}
