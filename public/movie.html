@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/app.css">
+    <link rel="stylesheet" href="./assets/styles/movie.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section id="mainApp">
+
+        <div id="movie">
+            <div class="movie-poster" style="background-image: url(https://imdb-api.com/images/original/MV5BOTkxOTg3MTk3MF5BMl5BanBnXkFtZTgwMjkxNzQyMTI@._V1_Ratio0.6751_AL_.jpg);"></div>
+            <div class="wrapper-movie">
+
+                <div class="scrollable">
+                    <div class="wrapper">
+
+                        <div class="movie-infos">
+                            <div class="movie-datas">
+                                <h2>The curious case of Benjamin Button</h2>
+                                <span class="score"><i class="fa-solid fa-star"></i> 7.8</span>
+                                <div class="basic-infos">
+                                    <span>Runtime: 2h 46min</span>
+                                    <span>Year: 2008</span>
+                                </div>
+                            </div>
+                            <div class="movie-pitch">
+                                <p>
+                                    On the day that Hurricane Katrina hits New Orleans, elderly Daisy Williams (nee Fuller)
+                                    is on her deathbed in a New Orleans hospital. At her side is her adult daughter,
+                                    Caroline. Daisy asks Caroline to read to her aloud the diary of Daisy's lifelong<a href="#" id="showMore">… <em>Show more</em></a><span id="morePitch" class="movie-hidden">friend,
+                                    Benjamin Button. Benjamin's diary recounts his entire extraordinary life, the primary
+                                    unusual aspect of which was his aging backwards, being diagnosed with several aging
+                                    diseases at birth and thus given little chance of survival, but who does survive and
+                                    gets younger with time. Abandoned by his biological father, Thomas Button, after
+                                    Benjamin's biological mother died in childbirth, Benjamin was raised by Queenie, a black
+                                    woman and caregiver at a seniors home. Daisy's grandmother was a resident at that home,
+                                    which is where she first met Benjamin. Although separated through the years, Daisy and
+                                    Benjamin remain in contact throughout their lives, reconnecting in their forties when in
+                                    age they finally match up. Some of the revelations in Benjamin's diary are difficult for
+                                    Caroline to read, especially as it relates to the time past this reconnection between
+                                    Benjamin and Daisy, when Daisy gets older and Benjamin grows younger into his childhood
+                                    years. <a href="#" id="showLess">Show less</a></span>
+                                </p>
+                            </div>
+                            <div class="more-infos">
+                                <span>Genres: 
+                                    <button>Drama</button>
+                                    <button>Fantasy</button>
+                                    <button>Romance</button>
+                                </span>
+                                <span>Director: David Fincher</span>
+                                <span>Stars: Brad Pitt, Cate Blanchett, Tilda Swinton</span>
+                            </div>
+                        </div>
+                        <div class="movie-actor">
+                            <h3>Cast List</h3>
+                            <div class="wrapper">
+                                <div class="actor-list">
+                                    <div class="movie-star" id="nm0000093">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Brad Pitt" title="Brad Pitt" style="background-image: url(https://imdb-api.com/images/original/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Brad Pitt</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0000949">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Cate Blanchett" title="Cate Blanchett" style="background-image: url(https://imdb-api.com/images/original/MV5BMTc1MDI0MDg1NV5BMl5BanBnXkFtZTgwMDM3OTAzMTE@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Cate Blanchett</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0842770">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Tilda Swinton" title="Tilda Swinton" style="background-image: url(https://imdb-api.com/images/original/MV5BMTM4NzMzMTkwNV5BMl5BanBnXkFtZTcwMzU4MDg1Mw@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Tilda Swinton</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0000566">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Julia Ormond" title="Julia Ormond" style="background-image: url(https://imdb-api.com/images/original/MV5BMjEzNTQyODk5Ml5BMl5BanBnXkFtZTcwOTEwOTk0OA@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Julia Ormond</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0150330">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Faune Chambers Watkins" title="Faune Chambers Watkins" style="background-image: url(https://imdb-api.com/images/original/MV5BMTc3MDk0ODQyNF5BMl5BanBnXkFtZTcwNDM1MDg2Mg@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Faune Chambers Watkins</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0000480">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Elias Koteas" title="Elias Koteas" style="background-image: url(https://imdb-api.com/images/original/MV5BNTEwMTEzODkzNF5BMl5BanBnXkFtZTcwMjI1NDAyMw@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Elias Koteas</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm1251245">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Donna Duplantier" title="Donna Duplantier" style="background-image: url(https://imdb-api.com/images/original/MV5BNGE4OWU5YjItZmE1Yi00YWI3LWFjY2UtZTE3OGI4YjY4Y2U3XkEyXkFqcGdeQXVyNDg3NTcyNQ@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Donna Duplantier</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm2164690">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Jacob Tolano" title="Jacob Tolano" style="background-image: url(https://imdb-api.com/images/original/MV5BMzVlYmQxMjItYzNhNy00NTZhLTgxMDItZGRjYzExNjZhMzlmXkEyXkFqcGdeQXVyMzkwMTY5Ng@@._V1_Ratio1.4714_AL_.jpg);">
+                                            <figcaption>Jacob Tolano</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm1767280">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Earl Maddox" title="Earl Maddox" style="background-image: url(https://imdb-api.com/images/original/nopicture.jpg);">
+                                            <figcaption>Earl Maddox</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0582726">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Ed Metzger" title="Ed Metzger" style="background-image: url(https://imdb-api.com/images/original/MV5BMjI3NzkwNDY2N15BMl5BanBnXkFtZTgwODY4MzA3MjE@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Ed Metzger</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0002076">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Jason Flemyng" title="Jason Flemyng" style="background-image: url(https://imdb-api.com/images/original/MV5BMjA0MjUxNTk5MV5BMl5BanBnXkFtZTcwOTE0OTEyOA@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Jason Flemyng</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0899087">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Danny Vinson" title="Danny Vinson" style="background-image: url(https://imdb-api.com/images/original/MV5BN2UwNGZlYWQtMGE4My00Y2JkLTlhODEtY2M2YmU1NzA2ZDg5XkEyXkFqcGdeQXVyMzk2MDQyMA@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Danny Vinson</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0003861">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="David Jensen" title="David Jensen" style="background-image: url(https://imdb-api.com/images/original/MV5BMjI3OTkzMzQ5MV5BMl5BanBnXkFtZTgwNTEwOTMxMTE@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>David Jensen</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm1376366">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Joeanna Sayler" title="Joeanna Sayler" style="background-image: url(https://imdb-api.com/images/original/nopicture.jpg);">
+                                            <figcaption>Joeanna Sayler</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0378245">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Taraji P. Henson" title="Taraji P. Henson" style="background-image: url(https://imdb-api.com/images/original/MV5BMTc4NDQ2MTUwMl5BMl5BanBnXkFtZTcwODA2NDY3NQ@@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Taraji P. Henson</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0991810">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Mahershala Ali" title="Mahershala Ali" style="background-image: url(https://imdb-api.com/images/original/MV5BNjQ1MGQ3Y2EtYTgwMS00NTQyLTk1MTUtZGQ3NDQyY2YyM2Q3XkEyXkFqcGdeQXVyMTY5MzAyMDE@._V1_Ratio1.0000_AL_.jpg);">
+                                            <figcaption>Mahershala Ali</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0354902">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Fiona Hale" title="Fiona Hale" style="background-image: url(https://imdb-api.com/images/original/nopicture.jpg);">
+                                            <figcaption>Fiona Hale</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-star" id="nm0639403">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-actor.png"
+                                                alt="Patrick Thomas O'Brien" title="Patrick Thomas O'Brien" style="background-image: url(https://imdb-api.com/images/original/MV5BZGI0NzNhNTgtYzA4OC00NGI4LThmNWItNGI2MzZhMmE5ZWMyXkEyXkFqcGdeQXVyMTEwODg2MDY@._V1_Ratio1.5000_AL_.jpg);">
+                                            <figcaption>Patrick Thomas O'Brien</figcaption>
+                                        </figure>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-alike">
+                            <h3>You Might Also Like</h3>
+                            <div class="wrapper">
+                                <div class="alike-list">
+                                    <div class="movie-card" id="tt0454921">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="The Pursuit of Happyness" title="The Pursuit of Happyness"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BMTQ5NjQ0NDI3NF5BMl5BanBnXkFtZTcwNDI0MjEzMw@@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Pursuit of Happyness</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 8.0</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt1285016">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="The Social Network" title="The Social Network"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Social Network</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.8</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt2980516">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="The Theory of Everything" title="The Theory of Everything"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BMTAwMTU4MDA3NDNeQTJeQWpwZ15BbWU4MDk4NTMxNTIx._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Theory of Everything</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.7</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt0443706">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png" alt="Zodiac"
+                                                title="Zodiac"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BN2UwNDc5NmEtNjVjZS00OTI5LWE5YjctMWM3ZjBiZGYwMGI2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>Zodiac</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.7</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt0454876">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png" alt="Life of Pi"
+                                                title="Life of Pi"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>Life of Pi</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.9</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt1343092">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png" alt="The Great Gatsby"
+                                                title="The Great Gatsby"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Great Gatsby</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.2</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt0162222">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png" alt="Cast Away"
+                                                title="Cast Away"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>Cast Away</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.8</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt1430122">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="The Curious Birth of Benjamin Button"
+                                                title="The Curious Birth of Benjamin Button"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BYzMzZTU2MjgtZjI1OS00NjdhLTgzNmItNGUzODVlMTg4NTcyXkEyXkFqcGdeQXVyMjc1NjIzOA@@._V1_Ratio0.7729_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Curious Birth of Benjamin Button</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.5</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt0120338">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png" alt="Titanic"
+                                                title="Titanic"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>Titanic</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.9</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt1010048">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="Slumdog Millionaire" title="Slumdog Millionaire"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BZmNjZWI3NzktYWI1Mi00OTAyLWJkNTYtMzUwYTFlZDA0Y2UwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>Slumdog Millionaire</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 8.0</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                    <div class="movie-card" id="tt2084970">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="The Imitation Game" title="The Imitation Game"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Imitation Game</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 8.0</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="movie-card" id="tt1568346">
+                                        <figure>
+                                            <img src="./assets/images/template/blank-poster.png"
+                                                alt="The Girl with the Dragon Tattoo"
+                                                title="The Girl with the Dragon Tattoo"
+                                                style="background-image: url(https://imdb-api.com/images/original/MV5BMTczNDk4NTQ0OV5BMl5BanBnXkFtZTcwNDAxMDgxNw@@._V1_Ratio0.6763_AL_.jpg);">
+                                            <figcaption>
+                                                <strong>The Girl with the Dragon Tattoo</strong>
+                                                <span class="score"><i class="fa-solid fa-star"></i> 7.8</span>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="moreMovies" style="display: none;">
+
+                            <div id="newRelease" class="landscape-push">
+                                <h4>New Release</h4>
+                                <div class="wrapper">
+                                    <div class="landscape-list">
+                                        <div class="landscape-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-release.png"
+                                                    alt="The Lord of the Rings: The Rings of Power"
+                                                    title="The Lord of the Rings: The Rings of Power"
+                                                    style="background-image: url(./assets/images/release/rings-of-power.jpg);">
+                                                <figcaption>
+                                                    <strong>The Lord of the Rings: The Rings of Power</strong>
+                                                    <span class="no-stonks"><i class="fa-solid fa-arrow-trend-down"></i>
+                                                        132</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="landscape-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-release.png" alt="Dune"
+                                                    title="Dune"
+                                                    style="background-image: url(./assets/images/release/dune-2021.jpg);">
+                                                <figcaption>
+                                                    <strong>Dune</strong>
+                                                    <span class="score"><i class="fa-solid fa-star"></i> 8.1</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="justForYou" class="landscape-push">
+                                <h4>Just For You</h4>
+                                <div class="wrapper">
+                                    <div class="landscape-list">
+                                        <div class="landscape-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-release.png" alt="Looper"
+                                                    title="Looper"
+                                                    style="background-image: url(./assets/images/release/looper.jpg);">
+                                                <figcaption>
+                                                    <strong>Looper</strong>
+                                                    <span class="score"><i class="fa-solid fa-star"></i> 7.4</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="landscape-card">
+                                            <figure>
+                                                <img src="./assets/images/template/blank-release.png" alt="Land of mine"
+                                                    title="Land of mine"
+                                                    style="background-image: url(./assets/images/release/land-of-mine.jpg);">
+                                                <figcaption>
+                                                    <strong>Land of mine</strong>
+                                                    <span class="score"><i class="fa-solid fa-star"></i> 7.8</span>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="fixed-menu">
+                <div class="wrapper">
+                    <div class="pop-elem">
+                        <button><i class="fa-solid fa-comment-dots"></i>125</button>
+                    </div>
+                    <div class="pop-elem">
+                        <button><i class="fa-solid fa-heart"></i>125</button>
+                    </div>
+                    <div class="pop-elem">
+                        <button><i class="fa-solid fa-heart-crack"></i>125</button>
+                    </div>
+                    <div class="pop-elem">
+                        <button><i class="fa-solid fa-eye"></i>125</button>
+                    </div>
+                    <button id="triggerMenu"><i class="fa-solid fa-ellipsis"></i></button>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <nav>
+            <button class="active"><i class="fa-solid fa-house"></i></button>
+            <button><i class="fa-solid fa-film"></i></button>
+            <button><i class="fa-solid fa-heart"></i></button>
+            <button><i class="fa-solid fa-shuffle"></i></button>
+            <button><i class="fa-solid fa-user"></i></button>
+        </nav>
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const popMenu = document.querySelector('#triggerMenu')
+        let popMenuOpen = false
+        const animMenu = gsap.timeline().pause()
+              animMenu.to('.pop-elem', {opacity: 1, y: -25, ease: 'back'})
+        popMenu.addEventListener('click', function(e){
+
+            e.preventDefault()
+            if (!popMenuOpen) {
+                animMenu.play()
+                popMenuOpen = true
+            } else {
+                animMenu.reverse()
+                popMenuOpen = false
+            }
+
+            console.log('prout')
+
+        }, false)
+
+        const showMore = document.querySelector('#showMore')
+        const showLess = document.querySelector('#showLess')
+        const morePitch = document.querySelector('#morePitch')
+        showMore.addEventListener('click', function(e){
+            e.preventDefault()
+            showMore.style.display = 'none'
+            morePitch.style.display = 'block'
+        }, false)
+        showLess.addEventListener('click', function(e){
+            e.preventDefault()
+            showMore.style.display = 'inline'
+            morePitch.style.display = 'none'
+        }, false)
+
+    </script>
+
+</body>
+
+</html>
