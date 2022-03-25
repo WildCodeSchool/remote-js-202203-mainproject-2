@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-function HomePage(){
-    return (
-        <h1>HomePage</h1>
-=======
 import { setOfFilms } from './homePageDataSet';
  //* 👆 Pour le dev seulement --> sinon à passer en props ou autre
 
@@ -64,7 +59,6 @@ function HomePage(){
                 </div>
             </div>
         </section>
->>>>>>> 088f9c780df877419276f2585eeea0ed60959411
     );
 }
 
