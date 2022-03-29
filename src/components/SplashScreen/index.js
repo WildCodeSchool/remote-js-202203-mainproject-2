@@ -1,22 +1,9 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import '../../assets/styles/splash.css';
-import EnterForm from './EnterForm';
 
-function SplashScreen() {
-
-    const [randomBackground, setRandomBackground] = useState('');
-    React.useEffect(() => {
-        chooseRandomBackground();
-    }, '');
-
-    function chooseRandomBackground() {
-        setRandomBackground(
-            backgrounds[Math.floor(Math.random() * backgrounds.length)]
-        );
-    }
-
-  // Manage random background to show off when the application loads
-  const backgrounds = [
+// List of available background to pick from
+const backgrounds = [
     { url: 'avengers.jpg' },
     { url: 'captainthor.jpg' },
     { url: 'darkknight.jpg' },
@@ -28,7 +15,23 @@ function SplashScreen() {
     { url: 'joker.jpg' },
     { url: 'junglecruise.jpg' },
     { url: 'sweeneytodd.jpg' },
-  ];
+];
+
+function SplashScreen() {
+
+    const [randomBackground, setRandomBackground] = useState('');
+
+    // Settle the random background and change it on every render
+    React.useEffect(() => {
+        chooseRandomBackground();
+    }, []);
+
+    // Choose a random background among the available ones
+    function chooseRandomBackground() {
+        setRandomBackground(
+            backgrounds[Math.floor(Math.random() * backgrounds.length)]
+        );
+    }
 
   return (
     <section
@@ -38,9 +41,8 @@ function SplashScreen() {
       }}
     >
       <h1>MyMovies</h1>
-
       <div className="content">
-        <EnterForm  />
+        <Outlet />
       </div>
     </section>
   );
