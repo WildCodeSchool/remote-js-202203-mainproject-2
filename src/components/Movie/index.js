@@ -7,7 +7,11 @@ import Rating from './Rating';
 // import { useParams } from 'react-router-dom';
 
 /* Dummy data of a movie from the API : */
-const movie = require('./../../oneFullMovie.json');
+// const movie require('./../../oneFullMovie.json');
+let movie = null;
+fetch('./../../oneFullMovie.json')
+.then(res => res.json())
+.then(data => movie = data);
 
 function Movie() {
     //! 👇 For production only 
