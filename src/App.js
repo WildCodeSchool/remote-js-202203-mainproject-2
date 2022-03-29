@@ -1,9 +1,9 @@
-import './assets/styles/reset.css';
-import './assets/styles/app.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import SplashScreen from './components/SplashScreen';
 import Movie from './components/Movie';
+
+import './assets/styles/app.css';
 
 function App() {
   return (
