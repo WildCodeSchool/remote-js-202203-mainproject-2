@@ -1,0 +1,294 @@
+#movie {
+    position: relative;
+    flex-grow: 1;
+    padding: 0;
+    overflow: hidden;
+}
+    
+#movie .movie-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat; background-position: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+}
+    
+.fixed-menu {
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+}
+    
+.fixed-menu .wrapper {
+    position: relative;
+}
+    
+.fixed-menu .wrapper .pop-elem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+    opacity: 0;
+}
+    
+.fixed-menu .wrapper .pop-elem button {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--base-white);
+    border: none;
+    background: none;
+}
+    
+.fixed-menu .wrapper .pop-elem button i {
+    font-size: 18px;
+}
+    
+.fixed-menu .wrapper #triggerMenu {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    color: var(--base-white);
+    border: 2px solid var(--base-white);
+    border-radius: 24px;
+    background: none;
+}
+    
+    
+    
+#movie .wrapper-movie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos {
+    position: relative;
+    margin-top: 70vh;
+}
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-datas {
+    padding: 50px 75px 0 25px;
+    background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(32,15,51,1) 85%);
+    background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(32,15,51,1) 85%);
+    background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(32,15,51,1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#200f33',GradientType=0 );
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos h2 {
+    font-size: 36px;
+    line-height: 32px;
+    color: var(--base-white);
+}
+    
+#movie .wrapper-movie .scrollable .wrapper .movie-infos span.score {
+    color: var(--base-yellowscore);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .basic-infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .basic-infos span {
+    font-size: 16px;
+    color: var(--base-white);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-plot {
+    background: var(--base-darkpurple);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-plot p {
+    font-size: 16px;
+    color: var(--base-white);
+    padding: 25px 75px 25px 25px;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-plot p a {
+    color: var(--base-white);
+    text-decoration: none;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-plot p a em {
+    font-style: normal;
+    text-decoration: underline;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-plot p span.movie-hidden {
+    display: none;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .movie-plot p span.movie-hidden a {
+    text-decoration: underline;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .more-infos {
+    display: flex;
+    flex-direction: column;
+    background: var(--base-darkpurple);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .more-infos span {
+    padding: 0 75px 0 25px;
+    color: var(--base-white);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .more-infos span button {
+    font-weight: 600;
+    color: var(--base-white);
+    border: 2px solid var(--base-white);
+    border-radius: 16px;
+    background: none;
+    margin: 0 calc(var(--spacing-1) / 4);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-infos .more-infos span button:last-child {
+    margin-right: 0;
+}
+
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor {
+    padding-top: 25px;
+    background: var(--base-darkpurple);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor h3 {
+    margin: 0 0 0 25px;
+    color: var(--base-white);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 25px;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper .actor-list {
+    display: flex;
+    flex-direction: row;
+    margin-right: 75px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper .actor-list::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    }
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper .actor-list .movie-star {
+    margin: 0 10px 0 0;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper .actor-list .movie-star figure {
+    width: var(--actor-width);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper .actor-list .movie-star figure img {
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--actor-width) / 2);
+    background-repeat: no-repeat; background-position: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-actor .wrapper .actor-list .movie-star figure figcaption {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: var(--base-white);
+}
+
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike {
+    padding-top: 25px;
+    background: var(--base-darkpurple);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike h3 {
+    margin: 0 0 0 25px;
+    color: var(--base-white);
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 25px;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list {
+    display: flex;
+    flex-direction: row;
+    margin-right: 75px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card {
+    margin: 0 10px 0 0;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card figure {
+    position: relative;
+    width: var(--movie-width);
+}
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(32,15,51,1) 85%);
+    background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(32,15,51,1) 85%);
+    background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(32,15,51,1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#200f33',GradientType=0 );
+    z-index: 1;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    background-repeat: no-repeat; background-position: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card figure figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 14px;
+    padding: 0 10px;
+    z-index: 2;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card figure figcaption strong {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--base-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#movie .wrapper-movie .scrollable .wrapper .movie-alike .wrapper .alike-list .movie-card figure figcaption span.score {
+    font-size: 12px;
+    color: var(--base-yellowscore);
+}

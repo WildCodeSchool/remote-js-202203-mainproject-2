@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+#mainApp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: blue;
+}
+
+header {
+    padding: 25px;
+    background: var(--base-darkblue);
+}
+
+header #mainUser {
+    width: 100%;
+}
+
+header #mainUser figure {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+header #mainUser figure img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--base-white);
+    border-radius: 32px;
+}
+
+header #mainUser figure figcaption {
+    color: var(--base-white);
+    padding-left: 8px;
+}
+
+header #mainUser figure figcaption h2 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 18px;
+}
+
+header #mainUser figure figcaption h2 span {
+    font-weight: normal;
+    color: var(--base-lightpurple);
+}
+
+header #mainUser figure figcaption h3 {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--base-lightpurple);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    padding: 15px 35px;
+    background: var(--base-orange);
+}
+
+nav button {
+    flex-grow: 1;
+    color: var(--base-darkpurple);
+    border: none;
+    background: none;
+    opacity: 0.25;
+}
+
+nav button.active {
+    opacity: 1;
+}

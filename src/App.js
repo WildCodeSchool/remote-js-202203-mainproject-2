@@ -1,4 +1,5 @@
-import './App.css';
+import './assets/styles/reset.css';
+import './assets/styles/app.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import SplashScreen from './components/SplashScreen';
@@ -6,6 +7,7 @@ import ConnectForm from './components/SplashScreen/ConnectForm';
 import SignupForm from './components/SplashScreen/SignupForm';
 import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
+import Movie from './components/Movie';
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
             <Route path='/retrieve-password' element={<RetrievePassword />} />
           </Route>
           <Route path='/home' element={<HomePage />}/>
+          <Route path='/movie/:id' element={<Movie />}/>
         </Routes>
       </Router>
     </div>
