@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import '../../assets/styles/splash.css';
 
 // List of available background to pick from
@@ -40,7 +40,7 @@ function SplashScreen() {
         backgroundImage: `url(./assets/images/backgrounds/${randomBackground.url})`,
       }}
     >
-      <h1>MyMovies</h1>
+      <Link to="/"><h1>MyMovies</h1></Link>
       <div className="content">
         <Outlet />
       </div>
