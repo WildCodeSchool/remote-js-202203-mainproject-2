@@ -1,34 +1,34 @@
-import React from 'react';
+// import React from 'react';
 import '../../assets/styles/movie.css';
 import GenreList from './GenreList';
 import ActorList from './ActorList';
 import MightLike from './MightLike';
 import Rating from './Rating';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 /* Dummy data of a movie from the API : */
-/*const movie = require('./../../oneFullMovie.json');*/
+const movie = require('./../../oneFullMovie.json');
 
 function Movie() {
-    const params = useParams();
-    const movieId = params.id;
-    const options = '/FullActor,FullCast,Posters,Ratings,Genres';
-    const urlAPI =
-        'https://imdb-api.com/en/API/Title/k_1673c6m2/' + movieId + options;
-    const [callAPI] = React.useState(0);
-    const [movie, setMovie] = React.useState(null);
+    //! 👇 For production only 
+    // const params = useParams();
+    // const movieId = params.id;
+    // const options = '/FullActor,FullCast,Posters,Ratings,Genres';
+    // const urlAPI = 'https://imdb-api.com/en/API/Title/k_1673c6m2/' + movieId + options;
+    // const [callAPI] = React.useState(0);
+    // const [movie, setMovie] = React.useState(null);
 
-    const controller = new AbortController();
-    const signal = controller.signal;
+    // const controller = new AbortController();
+    // const signal = controller.signal;
 
-    React.useEffect(() => {
+    /*React.useEffect(() => {
         fetch(urlAPI, { signal })
         .then((response) => response.json())
         .then((data) => {
             setMovie(data);
         });
         return () => controller.abort();
-    }, [callAPI]);
+    }, [callAPI]);*/
 
     return (
         <section id="mainApp">
