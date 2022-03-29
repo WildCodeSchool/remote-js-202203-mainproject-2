@@ -10,7 +10,7 @@ function MovieSlide({ movies, areTilesLandscape, slideId, slideTitle }) {
             <div className="wrapper">
                 <div className={`${(areTilesLandscape) ? 'landscape' : 'movie'}-list`}>
                     {
-                        movies.map((movie, index) => <MovieTile key={index} movie={movie} isLandScape={areTilesLandscape}/>)
+                        movies.map((movie, index) => <MovieTile key={index} movie={movie} isLandScape={areTilesLandscape} showStats={true}/>)
                     }
                 </div>
             </div>

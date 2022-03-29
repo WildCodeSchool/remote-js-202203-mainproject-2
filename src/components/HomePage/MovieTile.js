@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { backdrops } from './homePageDataSet';
 
-function MovieTile({movie, isLandScape}){
+function MovieTile({movie, isLandScape, showStats = false}){
 
     let image = (isLandScape) ? backdrops.find((m) => m.id === movie.id)?.image : movie.image;
 
@@ -29,8 +29,8 @@ function MovieTile({movie, isLandScape}){
                     title={movie.fullTitle}
                 />
                 <figcaption>
-                    <strong>{movie.title}</strong>
-                    {  getTileSpan() }
+                    <strong className={showStats === false && 'no-span'}>{movie.title}</strong>
+                    {  showStats && getTileSpan() }
                 </figcaption>
             </figure>
         </div>
@@ -47,7 +47,8 @@ MovieTile.propTypes = {
         image: PropTypes.string,
         imDbRating: PropTypes.string,
     }),
-    isLandScape: PropTypes.bool
+    isLandScape: PropTypes.bool,
+    showStats: PropTypes.bool
 };
 
 export default MovieTile;
