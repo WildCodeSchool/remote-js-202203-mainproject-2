@@ -1,8 +1,8 @@
 //* 👇 Pour le dev uniquement
-import { setOfFilms } from './homePageDataSet';
+// import { setOfFilms } from './homePageDataSet';
 
 //* 👇 Pour la prod
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import GenreFilterBar from './GenresFilterBar';
 import MovieSlide from './MovieSlide';
@@ -23,32 +23,32 @@ function HomePage(){
     };
 
     //* 👇 Pour le dev uniquement
-    const popularMovies = setOfFilms.slice(0, 7);
-    const inTheaters = setOfFilms.slice(0, 4);
+    // const popularMovies = setOfFilms.slice(0, 7);
+    // const inTheaters = setOfFilms.slice(0, 4);
 
     //* 👇 Pour la prod
-    // const popularMoviesUrl = 'https://imdb-api.com/en/API/MostPopularMovies/k_xxgrvftl';
-    // const [popularMovies, setPopularMovies] = useState(null);
+    const popularMoviesUrl = 'https://imdb-api.com/en/API/MostPopularMovies/k_xxgrvftl';
+    const [popularMovies, setPopularMovies] = useState(null);
     
-    // const popularSeriesUrl = 'https://imdb-api.com/en/API/MostPopularTVs/k_xxgrvftl';
-    // const [popularSeries, setPopularSeries] = useState(null);
+    const popularSeriesUrl = 'https://imdb-api.com/en/API/MostPopularTVs/k_xxgrvftl';
+    const [popularSeries, setPopularSeries] = useState(null);
     
-    // const comingSoonUrl = 'https://imdb-api.com/en/API/ComingSoon/k_xxgrvftl';
-    // const [comingSoon, setComingSoon] = useState(null);
+    const comingSoonUrl = 'https://imdb-api.com/en/API/ComingSoon/k_xxgrvftl';
+    const [comingSoon, setComingSoon] = useState(null);
 
-    // const inTheatersUrl = 'https://imdb-api.com/en/API/InTheaters/k_xxgrvftl';
-    // const [inTheaters, setInTheaters] = useState(null);
+    const inTheatersUrl = 'https://imdb-api.com/en/API/InTheaters/k_xxgrvftl';
+    const [inTheaters, setInTheaters] = useState(null);
 
-    // const controller = new AbortController();
-    // const signal = controller.signal;
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-    // useEffect(() => {
-    //     fetch(popularMoviesUrl, { signal }).then((response) => response.json()).then((data) => setPopularMovies(data.items));
-    //     fetch(popularSeriesUrl, { signal }).then((response) => response.json()).then((data) => setPopularSeries(data.items));
-    //     fetch(comingSoonUrl, { signal }).then((response) => response.json()).then((data) => setComingSoon(data.items));
-    //     fetch(inTheatersUrl, { signal }).then((response) => response.json()).then((data) => setInTheaters(data.items));
-    //     return () => controller.abort();
-    // }, []);
+    useEffect(() => {
+         fetch(popularMoviesUrl, { signal }).then((response) => response.json()).then((data) => setPopularMovies(data.items));
+         fetch(popularSeriesUrl, { signal }).then((response) => response.json()).then((data) => setPopularSeries(data.items));
+         fetch(comingSoonUrl, { signal }).then((response) => response.json()).then((data) => setComingSoon(data.items));
+         fetch(inTheatersUrl, { signal }).then((response) => response.json()).then((data) => setInTheaters(data.items));
+         return () => controller.abort();
+     }, []);
 
     
     return (
@@ -81,16 +81,18 @@ function HomePage(){
                                 <div id="moreMovies">
                                     {/* 
                                     //* 👇 Pour le dev uniquement
-                                     */}
                                     <MovieSlide movies={(popularMovies)} slideTitle={'Popular Movies'} slideId={'trending-now'} />
                                     <MovieSlide movies={(inTheaters)} slideTitle={'In Theaters'} slideId={'new-release'} areTilesLandscape={true} />
+                                     */}
+                                                                
                                     {/* 
                                     //* 👇 Pour la prod
+                                    */}
                                     <MovieSlide movies={(popularMovies)} slideTitle={'Popular Movies'} slideId={'trending-now'} />
                                     <MovieSlide movies={(popularSeries)} slideTitle={'Popular Series'} slideId={'popular-series'} />
                                     <MovieSlide movies={(comingSoon)} slideTitle={'Coming soon'} slideId={'coming-soon'} />
                                     <MovieSlide movies={(inTheaters)} slideTitle={'In Theaters'} slideId={'new-release'} areTilesLandscape={true} />
-                                    */}
+                                    
                                 </div>
                             </div>
                         </div>
