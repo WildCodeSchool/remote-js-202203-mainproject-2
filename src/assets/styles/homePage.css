@@ -130,26 +130,29 @@
     color: var(--base-yellowscore);
 }
 
-#moreMovies {
+.landscape-push {
     width: 100%;
 }
 
-#moreMovies .landscape-push {
-    width: 100%;
-}
-
-#moreMovies .landscape-push h4 {
+.landscape-push h4 {
     font-size: 18px;
     font-weight: 600;
     color: var(--base-white);
 }
 
-#moreMovies .landscape-push .wrapper {
+.landscape-push .wrapper {
     width: 100%;
     overflow: hidden;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list {
+.landscape-push .wrapper .loading-movies,
+.movie-push .wrapper .loading-movies {
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.landscape-push .wrapper .landscape-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -158,22 +161,22 @@
     overflow-y: hidden;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list::-webkit-scrollbar {
+.landscape-push .wrapper .landscape-list::-webkit-scrollbar {
     width: 0;
     background: transparent;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card {
+.landscape-push .wrapper .landscape-list .landscape-card {
     width: 288px;
     margin: 0 20px 0 0;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure {
+.landscape-push .wrapper .landscape-list .landscape-card figure {
     position: relative;
     width: 288px;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure:after {
+.landscape-push .wrapper .landscape-list .landscape-card figure:after {
     content: '';
     position: absolute;
     left: 0;
@@ -188,7 +191,7 @@
     z-index: 1;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure img {
+.landscape-push .wrapper .landscape-list .landscape-card figure img {
     display: block;
     width: 288px;
     height: auto;
@@ -201,7 +204,7 @@
     background-size: cover;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption {
+.landscape-push .wrapper .landscape-list .landscape-card figure figcaption {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -213,7 +216,7 @@
     z-index: 2;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption strong {
+.landscape-push .wrapper .landscape-list .landscape-card figure figcaption strong {
     display: block;
     width: 100%;
     font-size: 16px;
@@ -224,16 +227,18 @@
     text-overflow: ellipsis;
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption span {
+.landscape-push .wrapper .landscape-list .landscape-card figure figcaption span {
     font-size: 12px;
     color: var(--base-yellowscore);
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption span.stonks {
+.landscape-push .wrapper .landscape-list .landscape-card figure figcaption span.stonks,
+.movie-push .wrapper .movie-list .movie-card figure figcaption span.stonks {
     color: var(--base-greenstonks);
 }
 
-#moreMovies .landscape-push .wrapper .landscape-list .landscape-card figure figcaption span.no-stonks {
+.landscape-push .wrapper .landscape-list .landscape-card figure figcaption span.no-stonks,
+.movie-push .wrapper .movie-list .movie-card figure figcaption span.no-stonks {
     color: var(--base-rednostonks);
 }
 
