@@ -1,5 +1,3 @@
-import './assets/styles/reset.css';
-import './assets/styles/app.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import SplashScreen from './components/SplashScreen';
@@ -8,9 +6,9 @@ import SignupForm from './components/SplashScreen/SignupForm';
 import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
 import Movie from './components/Movie';
-import UserProfile from './components/UserProfile';
-import EditProfile from './components/UserProfile/EditProfile';
+import RandomJoke from './components/RandomJoke';
 
+import './assets/styles/app.css';
 
 function App() {
   return (
@@ -25,9 +23,10 @@ function App() {
           </Route>
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
-          <Route path="/profile" element={<UserProfile />}>
-            <Route path="/profile/edit" element={<EditProfile />} />
-          </Route>
+          { /* 
+          TODO 👇 à déplacer dans le toast
+          */}
+          <Route path='/joke' element={<RandomJoke />}/>
         </Routes>
       </Router>
     </div>
