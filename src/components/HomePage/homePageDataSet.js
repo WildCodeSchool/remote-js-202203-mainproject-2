@@ -307,7 +307,7 @@ const genres = [
         value: 'action'
     },
     {
-        label: 'Comdedy',
+        label: 'Comedy',
         value: 'comedy'
     },
     {
