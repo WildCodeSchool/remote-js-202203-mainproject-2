@@ -9,8 +9,8 @@ import React from 'react';
 
 
 /* Dummy data of a movie from the API : doesn't work with github linter ?!? */
-const movie = require('./../../oneFullMovie.json');
-// import movie from './oneFullMovie';
+// const movie = require('./../../oneFullMovie.json');
+import movie from './oneFullMovie';
 
 
 function Movie() {
