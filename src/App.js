@@ -8,6 +8,8 @@ import SignupForm from './components/SplashScreen/SignupForm';
 import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
 import Movie from './components/Movie';
+import UserProfile from './components/UserProfile';
+import EditProfile from './components/UserProfile/EditProfile';
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
           </Route>
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
+          <Route path="/profile" element={<UserProfile />}>
+            <Route path="/profile/edit" element={<EditProfile />} />
+          </Route>
         </Routes>
       </Router>
     </div>
