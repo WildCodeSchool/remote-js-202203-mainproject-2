@@ -4,16 +4,15 @@ import GenreList from './GenreList';
 import ActorList from './ActorList';
 import MightLike from './MightLike';
 import Rating from './Rating';
+import React from 'react';
 // import { useParams } from 'react-router-dom';
 
-/* Dummy data of a movie from the API : */
-const movie = require('./../../oneFullMovie.json');
-//let movie = null;
-//fetch('./../../oneFullMovie.json')
-//.then(res => res.json())
-//.then(data => movie = data);
+/* Dummy data of a movie from the API : doesn't work with github linter ?!? */
+// const movie = require('./../../oneFullMovie.json');
+import movie from './oneFullMovie';
 
 function Movie() {
+
     //! 👇 For production only 
     // const params = useParams();
     // const movieId = params.id;

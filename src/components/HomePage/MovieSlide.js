@@ -1,18 +1,32 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 import MovieTile from './MovieTile';
 
 function MovieSlide({ movies, areTilesLandscape, slideId, slideTitle }) {
-    // TODO id et title en props
+    const loadingDotsArray = [ '...', '·..', '··.', '···', '.··', '..·', ];
+    const [ loadingDotsIndex, setLoadingDotsIndex] = useState(0);
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setLoadingDotsIndex((i) => (i >= loadingDotsArray.length -1) ? 0 : i+1);
+        }, 100);
+        return () => clearInterval(interval);
+    }, []);
+
     return(
         <div id={(slideId?.length) && slideId} className={`${(areTilesLandscape) ? 'landscape' : 'movie'}-push`}>
             <h4>{(slideTitle?.length) ? slideTitle : 'New section'}</h4>
             <div className="wrapper">
-                <div className={`${(areTilesLandscape) ? 'landscape' : 'movie'}-list`}>
-                    {
-                        movies.map((movie, index) => <MovieTile key={index} movie={movie} isLandScape={areTilesLandscape} showStats={true}/>)
-                    }
-                </div>
+                {
+                    (movies?.length) 
+                    ? <div className={`${(areTilesLandscape) ? 'landscape' : 'movie'}-list`}>
+                        {
+                            movies.map((movie, index) => <MovieTile key={index} movie={movie} isLandScape={areTilesLandscape} showStats={true}/>)
+                        }
+                    </div>
+                    : <p className='loading-movies'>Loading Movies {loadingDotsArray[loadingDotsIndex]}</p>
+                }
             </div>
 
         </div>
