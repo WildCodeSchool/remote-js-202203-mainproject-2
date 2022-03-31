@@ -65,14 +65,20 @@ nav {
     background: var(--base-orange);
 }
 
-nav button {
+nav a {
     flex-grow: 1;
     color: var(--base-darkpurple);
     border: none;
     background: none;
     opacity: 0.25;
+    text-align: center;
 }
 
-nav button.active {
+nav a button {
+    border: none;
+    background: none;
+}
+
+nav a.active {
     opacity: 1;
 }
