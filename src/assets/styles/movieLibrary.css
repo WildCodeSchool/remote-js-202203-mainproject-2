@@ -7,14 +7,14 @@
     overflow-anchor: none;
 }
 
-fieldset {
+.movie-library fieldset {
     display: flex;
     margin: 0 0 var(--spacing-2) 0;
     padding: 0;
     border: none;
 }
 
-input {
+.movie-library input {
     flex-grow: 1;
     height: 36px;
     padding: 0 10px 0 10px;
@@ -24,29 +24,29 @@ input {
     color: var(--base-white);
 }
 
-input::placeholder {
+.movie-library input::placeholder {
     color: var(--base-white);
 }
 
-.library {
+.movie-library .library {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.library a {
+.movie-library .library a {
     justify-self: center;
 }
 
-.movie-card {
+.movie-library .movie-card {
     margin: 0 4px var(--spacing-2) 4px;
     width: var(--movie-width);
 }
 
-.movie-card figure {
+.movie-library .movie-card figure {
     position: relative;
 }
 
-.movie-card figure:after {
+.movie-library .movie-card figure:after {
     content: '';
     position: absolute;
     left: 0;
@@ -61,14 +61,14 @@ input::placeholder {
     z-index: 1;
 }
 
-.movie-card figure img {
+.movie-library .movie-card figure img {
     width: 100%;
     height: auto;
     border-radius: 12px 12px 0 0;
     background-repeat: no-repeat; background-position: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
 }
 
-.movie-card figure figcaption {
+.movie-library .movie-card figure figcaption {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -81,7 +81,7 @@ input::placeholder {
     z-index: 2;
 }
 
-.movie-card figure figcaption strong {
+.movie-library .movie-card figure figcaption strong {
     display: block;
     width: 100%;
     font-size: 16px;
