@@ -1,12 +1,19 @@
 import { Link } from 'react-router-dom';
 
-function ConnectForm(){
+export default function ConnectForm(){
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // TODO: Create user in database
+        // Code here…
+        location.replace('/home');
+    };
 
     return (
         <>
         <h2>Connect</h2>
         <div className='connect-forms'>
-            <form>
+            <form onSubmit={handleSubmit} method="POST">
                 <fieldset>
                     <div className="form-row">
                         <input type="email" name="email" id="emailSignin" placeholder='E-mail*' />
@@ -24,5 +31,3 @@ function ConnectForm(){
       </>
     );
 }
-
-export default ConnectForm;
