@@ -4,6 +4,14 @@
     color: var(--base-white);
     padding: 25px;
     overflow-y: auto;
+    overflow-anchor: none;
+}
+
+fieldset {
+    display: flex;
+    margin: 0 0 var(--spacing-2) 0;
+    padding: 0;
+    border: none;
 }
 
 input {
@@ -13,13 +21,11 @@ input {
     border: none;
     border-radius: 5px;
     background: var(--base-mediumpurple);
+    color: var(--base-white);
 }
 
-fieldset {
-    display: flex;
-    margin: 0 0 var(--spacing-2) 0;
-    padding: 0;
-    border: none;
+input::placeholder {
+    color: var(--base-white);
 }
 
 .library {
