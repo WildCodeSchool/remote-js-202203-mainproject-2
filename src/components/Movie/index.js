@@ -1,39 +1,27 @@
-// import React from 'react';
 import '../../assets/styles/movie.css';
 import GenreList from './GenreList';
 import ActorList from './ActorList';
 import MightLike from './MightLike';
 import Rating from './Rating';
-import React from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
+import { useParams } from 'react-router';
+import { getMovieById } from '../../indexedDb/indexedDbController';
 
 /* Dummy data of a movie from the API : doesn't work with github linter ?!? */
 // const movie = require('./../../oneFullMovie.json');
-import movie from './oneFullMovie';
+// import movie from './oneFullMovie';
 
 
 function Movie() {
-
-    //! 👇 For production only 
-    // const params = useParams();
-    // const movieId = params.id;
-    // const options = '/FullActor,FullCast,Posters,Ratings,Genres';
-    // const urlAPI = 'https://imdb-api.com/en/API/Title/k_1673c6m2/' + movieId + options;
-    // const [callAPI] = React.useState(0);
-    // const [movie, setMovie] = React.useState(null);
-
-    // const controller = new AbortController();
-    // const signal = controller.signal;
-
-    /*React.useEffect(() => {
-        fetch(urlAPI, { signal })
-        .then((response) => response.json())
-        .then((data) => {
-            setMovie(data);
-        });
-        return () => controller.abort();
-    }, [callAPI]);*/
+    const [movie, setMovie] = useState(null);
+    
+    const params = useParams();
+    const movieId = params.id;
+    useEffect(async () => {
+        let m = await getMovieById(movieId);
+        setMovie(m);
+    }, []);
 
     return (
         <section id="mainApp">

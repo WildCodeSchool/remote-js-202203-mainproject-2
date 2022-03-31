@@ -1,4 +1,5 @@
 import React from 'react';
+import getImDbUrl from '../../utils/getImDbUrl';
 
 function SearchBar(){
 
@@ -29,11 +30,10 @@ function SearchBar(){
         let urlMovie;
         rateOptionParam();
         releaseDateOptionParam();
-
         if(advanceSearchActive){
-            urlMovie = `https://imdb-api.com/API/AdvancedSearch/k_xxgrvftl?title=${searchValue}&title_type=${typeOption}&user_rating=${userRateOption}&release_date=${releaseDateOption}&certificates=${classificationOption}&sort=${triOption}`;
+            urlMovie = `${getImDbUrl('AdvancedSearch')}?title=${searchValue}&title_type=${typeOption}&user_rating=${userRateOption}&release_date=${releaseDateOption}&certificates=${classificationOption}&sort=${triOption}`;
         }else{
-            urlMovie = `https://imdb-api.com/en/API/SearchAll/k_xxgrvftl/${searchValue}`;
+            urlMovie = `${getImDbUrl('SearchAll')}/${searchValue}`;
         }
         fetch(urlMovie)
         .then(res => res.json())
