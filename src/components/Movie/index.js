@@ -5,6 +5,7 @@ import ActorList from './ActorList';
 import MightLike from './MightLike';
 import Rating from './Rating';
 import React from 'react';
+import MovieMenu from './MovieMenu';
 // import { useParams } from 'react-router-dom';
 
 /* Dummy data of a movie from the API : doesn't work with github linter ?!? */
@@ -66,6 +67,7 @@ function Movie() {
                         </div>
                     </div>
                 </div>
+                <MovieMenu />
             </div>}
         </section>
     );
