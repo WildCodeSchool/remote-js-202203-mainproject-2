@@ -9,6 +9,7 @@ import MovieSlide from './MovieSlide';
 import SearchBar from './SearchBar';
 
 import '../../assets/styles/homePage.css';
+import NavBar from '../NavBar';
 
 function HomePage(){
     
@@ -99,6 +100,9 @@ function HomePage(){
                     </div>
                 </div>
             </div>
+
+            <NavBar />
+
         </section>
     );
 }
