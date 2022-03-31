@@ -13,7 +13,7 @@ function MovieSlide({ movies, areTilesLandscape, slideId, slideTitle }) {
         }, 100);
         return () => clearInterval(interval);
     }, []);
-
+    
     return(
         <div id={(slideId?.length) && slideId} className={`${(areTilesLandscape) ? 'landscape' : 'movie'}-push`}>
             <h4>{(slideTitle?.length) ? slideTitle : 'New section'}</h4>

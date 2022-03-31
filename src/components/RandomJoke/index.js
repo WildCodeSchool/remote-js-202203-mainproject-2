@@ -62,7 +62,6 @@ function RandomJoke() {
     return ( 
         <section>
             { joke ? showJoke() : 'Charging Joke ...' }
-
         </section>
      );
 }

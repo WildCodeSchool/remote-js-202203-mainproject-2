@@ -1,10 +1,22 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { backdrops } from './homePageDataSet';
+import { getMovieById } from '../../indexedDb/indexedDbController';
+// import { backdrops } from './homePageDataSet';
 
-function MovieTile({movie, isLandScape}){
+function MovieTile({ movie: { id: movieId } , isLandScape}){
 
-    let image = (!isLandScape) ? movie.image : ((backdrops.find((m) => m.id === movie.id))?.image || 'https://picsum.photos/200/300');
+    const [ movie, setMovie ] = useState(null);
+    useEffect(async () => {
+        const m = await getMovieById(movieId);
+        setMovie(m);
+    }, []);
+
+
+    function getImageUrl(){
+        return (!isLandScape) ? movie.image : movie.backdrop.link;
+    }
+
     function getTileSpan(){
         
         const rank = movie?.rankUpDown;
@@ -14,29 +26,36 @@ function MovieTile({movie, isLandScape}){
         return (
             <small>
                 { (movie.imDbRating) && <span><i className="fa-solid fa-star"></i>&nbsp;{ movie.imDbRating }</span> }
-                { (movie.imDbRating && value!=0) && ' | ' }
+                { (rank && movie.imDbRating) && ' | ' }
                 { (rank && value != 0 ) && <span className={(isUp) ? 'stonks' : 'no-stonks'}><i className={`fa-solid fa-arrow-trend-${(isUp) ? 'up' : 'down'}`}></i> {value}</span> }
             </small>
         );
     }
 
     return(
-        <Link to={`/movie/${movie.id}`} >
-            <div className={`${(isLandScape) ? 'landscape' : 'movie'}-card`}>
-                <figure>
-                    <img 
-                        src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
-                        style={ { backgroundImage: `url(${image})` } }
-                        alt={movie.fullTitle}
-                        title={movie.fullTitle}
-                    />
-                    <figcaption>
-                        <strong>{movie.title}</strong>
-                        {  getTileSpan() }
-                    </figcaption>
-                </figure>
-            </div>
-        </Link>
+        <>
+        {
+            (movie) ?
+            <Link to={`/movie/${movie.id}`} >
+                <div className={`${(isLandScape) ? 'landscape' : 'movie'}-card`}>
+                    <figure>
+                        <img 
+                            src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
+                            style={ { backgroundImage: `url(${getImageUrl()})` } }
+                            alt={movie.fullTitle}
+                            title={movie.fullTitle}
+                        />
+                        <figcaption>
+                            <strong>{movie.title}</strong>
+                            {  getTileSpan() }
+                        </figcaption>
+                    </figure>
+                </div>
+            </Link>
+            :
+            <p style={{color:' white'}}>Loading</p>
+        }
+        </>
 
     );
 }

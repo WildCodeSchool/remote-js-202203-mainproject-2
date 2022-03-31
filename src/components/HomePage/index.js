@@ -9,6 +9,7 @@ import MovieSlide from './MovieSlide';
 import SearchBar from './SearchBar';
 
 import '../../assets/styles/homePage.css';
+import getImDbUrl from '../../utils/getImDbUrl';
 
 function HomePage(){
     
@@ -27,16 +28,16 @@ function HomePage(){
     // const inTheaters = setOfFilms.slice(0, 4);
 
     //* 👇 Pour la prod
-    const popularMoviesUrl = 'https://imdb-api.com/en/API/MostPopularMovies/k_xxgrvftl';
+    const popularMoviesUrl = getImDbUrl('MostPopularMovies');
     const [popularMovies, setPopularMovies] = useState(null);
     
-    const popularSeriesUrl = 'https://imdb-api.com/en/API/MostPopularTVs/k_xxgrvftl';
+    const popularSeriesUrl = getImDbUrl('MostPopularTVs');
     const [popularSeries, setPopularSeries] = useState(null);
     
-    const comingSoonUrl = 'https://imdb-api.com/en/API/ComingSoon/k_xxgrvftl';
+    const comingSoonUrl = getImDbUrl('ComingSoon');
     const [comingSoon, setComingSoon] = useState(null);
 
-    const inTheatersUrl = 'https://imdb-api.com/en/API/InTheaters/k_xxgrvftl';
+    const inTheatersUrl = getImDbUrl('InTheaters');
     const [inTheaters, setInTheaters] = useState(null);
 
     const controller = new AbortController();
@@ -46,8 +47,8 @@ function HomePage(){
          fetch(popularMoviesUrl, { signal }).then((response) => response.json()).then((data) => setPopularMovies(data.items));
          fetch(popularSeriesUrl, { signal }).then((response) => response.json()).then((data) => setPopularSeries(data.items));
          fetch(comingSoonUrl, { signal }).then((response) => response.json()).then((data) => setComingSoon(data.items));
-         fetch(inTheatersUrl, { signal }).then((response) => response.json()).then((data) => setInTheaters(data.items));
-         return () => controller.abort();
+        fetch(inTheatersUrl, { signal }).then((response) => response.json()).then((data) => setInTheaters(data.items));
+        return () => controller.abort();
      }, []);
 
     
