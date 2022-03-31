@@ -113,7 +113,6 @@ function MovieLibrary() {
             if (event.target.scrollTop >= event.target.scrollHeight - 1100) {
                 setToLoad(toLoad + 30);
                 setLibrary(entireLibrary.slice(0, toLoad));
-                console.log(toLoad);
             }
         }
     }
