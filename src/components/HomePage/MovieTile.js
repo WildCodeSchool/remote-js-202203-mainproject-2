@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 import { getMovieById } from '../../indexedDb/indexedDbController';
 // import { backdrops } from './homePageDataSet';
 
-function MovieTile({ movie: { id: movieId } , isLandScape, showStats = false}){
+function MovieTile({ movie: propsMovie , isLandScape, showStats = false}){
 
     const [ movie, setMovie ] = useState(null);
     useEffect(async () => {
-        const m = await getMovieById(movieId);
-        setMovie(m);
+        if(isLandScape){
+            const m = await getMovieById(propsMovie.id);
+            setMovie(m);
+        }else {
+            setMovie(propsMovie);
+        }
     }, []);
 
 
