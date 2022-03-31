@@ -1,39 +1,65 @@
 import PropTypes from 'prop-types';
-import { backdrops } from './homePageDataSet';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getMovieById } from '../../indexedDb/indexedDbController';
+// import { backdrops } from './homePageDataSet';
 
-function MovieTile({movie, isLandScape}){
+function MovieTile({ movie: propsMovie , isLandScape, showStats = false}){
 
-    let image = (isLandScape) ? backdrops.find((m) => m.id === movie.id)?.image : movie.image;
+    const [ movie, setMovie ] = useState(null);
+    useEffect(async () => {
+        if(isLandScape){
+            const m = await getMovieById(propsMovie.id);
+            setMovie(m);
+        }else {
+            setMovie(propsMovie);
+        }
+    }, []);
+
+
+    function getImageUrl(){
+        return (!isLandScape) ? movie.image : movie.backdrop.link;
+    }
 
     function getTileSpan(){
         
-        const isUp = (movie?.rankUpDown?.includes('+')) ? true : false;
-        const value = Number(movie?.rankUpDown?.replace('+', '').replace('-', ''));
+        const rank = movie?.rankUpDown;
+        const isUp = (rank?.includes('+')) ? true : false;
+        const value = Number(rank?.replace('+', '').replace('-', ''));
 
         return (
-            <span>
-                { (movie.imDbRating) && <><i className="fa-solid fa-star"></i>&nbsp;{ movie.imDbRating }</> }
-                { (movie.imDbRating && value!=0) && ' | ' }
-                { (value != 0) && <span className={(isUp) ? 'stonks' : 'no-stonks'}><i className={`fa-solid fa-arrow-trend-${(isUp) ? 'up' : 'down'}`}></i> {value}</span> }
-            </span>
+            <small>
+                { (movie.imDbRating) && <span><i className="fa-solid fa-star"></i>&nbsp;{ movie.imDbRating }</span> }
+                { (rank && movie.imDbRating) && ' | ' }
+                { (rank && value != 0 ) && <span className={(isUp) ? 'stonks' : 'no-stonks'}><i className={`fa-solid fa-arrow-trend-${(isUp) ? 'up' : 'down'}`}></i> {value}</span> }
+            </small>
         );
     }
 
     return(
-        <div className={`${(isLandScape) ? 'landscape' : 'movie'}-card`}>
-            <figure>
-                <img 
-                    src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
-                    style={ { backgroundImage: `url(${image})` } }
-                    alt={movie.fullTitle}
-                    title={movie.fullTitle}
-                />
-                <figcaption>
-                    <strong>{movie.title}</strong>
-                    {  getTileSpan() }
-                </figcaption>
-            </figure>
-        </div>
+        <>
+        {
+            (movie) ?
+            <Link to={`/movie/${movie.id}`} >
+                <div className={`${(isLandScape) ? 'landscape' : 'movie'}-card`}>
+                <figure>
+                    <img 
+                        src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
+                        style={ { backgroundImage: `url(${getImageUrl()})` } }
+                        alt={movie.fullTitle ?? movie.title}
+                        title={movie.fullTitle ?? movie.title}
+                    />
+                    <figcaption>
+                        <strong className={showStats === false && 'no-span'}>{movie.title}</strong>
+                        {  showStats && getTileSpan() }
+                    </figcaption>
+                </figure>
+                </div>
+            </Link>
+            :
+            <p style={{color:' white'}}>Loading</p>
+        }
+        </>
     );
 }
 
@@ -43,11 +69,12 @@ MovieTile.propTypes = {
         rank: PropTypes.string,
         rankUpDown: PropTypes.string,
         title: PropTypes.string.isRequired,
-        fullTitle: PropTypes.string.isRequired,
+        fullTitle: PropTypes.string,
         image: PropTypes.string,
         imDbRating: PropTypes.string,
     }),
-    isLandScape: PropTypes.bool
+    isLandScape: PropTypes.bool,
+    showStats: PropTypes.bool
 };
 
 export default MovieTile;
