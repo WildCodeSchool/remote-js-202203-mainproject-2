@@ -4,27 +4,27 @@ export default function NavBar() {
 
     return (
     <nav>
-      <NavLink to="/home" activeClassName='active'>
+      <NavLink to="/home" className={({ isActive }) => isActive ? 'active' : ''}>
         <button>
           <i className="fa-solid fa-house"></i>
         </button>
       </NavLink>
-      <NavLink to="/movies" activeClassName='active'>
+      <NavLink to="/movies" className={({ isActive }) => isActive ? 'active' : ''}>
         <button>
           <i className="fa-solid fa-film"></i>
         </button>
       </NavLink>
-      <NavLink to="/loved" activeClassName='active'>
+      <NavLink to="/loved" className={({ isActive }) => isActive ? 'active' : ''}>
         <button>
           <i className="fa-solid fa-heart"></i>
         </button>
       </NavLink>
-      <NavLink to="/shuffle" activeClassName='active'>
+      <NavLink to="/shuffle" className={({ isActive }) => isActive ? 'active' : ''}>
         <button>
           <i className="fa-solid fa-shuffle"></i>
         </button>
       </NavLink>
-      <NavLink to="/profile" activeClassName='active'>
+      <NavLink to="/profile" className={({ isActive }) => isActive ? 'active' : ''}>
         <button>
           <i className="fa-solid fa-user"></i>
         </button>
