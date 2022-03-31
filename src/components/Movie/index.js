@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router';
 import { getMovieById } from '../../indexedDb/indexedDbController';
+import NavBar from '../NavBar';
 
 /* Dummy data of a movie from the API : doesn't work with github linter ?!? */
 // const movie = require('./../../oneFullMovie.json');
@@ -57,6 +58,7 @@ function Movie() {
                     </div>
                 </div>
             </div>}
+            <NavBar />
         </section>
     );
 }
