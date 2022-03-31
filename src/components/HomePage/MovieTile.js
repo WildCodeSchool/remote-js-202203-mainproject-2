@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { backdrops } from './homePageDataSet';
 
-function MovieTile({movie, isLandScape}){
+function MovieTile({movie, isLandScape, showStats = false}){
 
     let image = (!isLandScape) ? movie.image : ((backdrops.find((m) => m.id === movie.id))?.image || 'https://picsum.photos/200/300');
     function getTileSpan(){
@@ -27,17 +27,16 @@ function MovieTile({movie, isLandScape}){
                     <img 
                         src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
                         style={ { backgroundImage: `url(${image})` } }
-                        alt={movie.fullTitle}
-                        title={movie.fullTitle}
+                        alt={movie.fullTitle ?? movie.title}
+                        title={movie.fullTitle ?? movie.title}
                     />
                     <figcaption>
-                        <strong>{movie.title}</strong>
-                        {  getTileSpan() }
+                        <strong className={showStats === false && 'no-span'}>{movie.title}</strong>
+                        {  showStats && getTileSpan() }
                     </figcaption>
                 </figure>
             </div>
         </Link>
-
     );
 }
 
@@ -47,11 +46,12 @@ MovieTile.propTypes = {
         rank: PropTypes.string,
         rankUpDown: PropTypes.string,
         title: PropTypes.string.isRequired,
-        fullTitle: PropTypes.string.isRequired,
+        fullTitle: PropTypes.string,
         image: PropTypes.string,
         imDbRating: PropTypes.string,
     }),
-    isLandScape: PropTypes.bool
+    isLandScape: PropTypes.bool,
+    showStats: PropTypes.bool
 };
 
 export default MovieTile;
