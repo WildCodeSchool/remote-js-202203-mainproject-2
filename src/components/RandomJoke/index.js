@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './randomJoke.css';
+import '../../assets/styles/randomJoke.css';
 
 function RandomJoke() {
     const [ joke, setJoke ] = useState('');
@@ -60,7 +60,7 @@ function RandomJoke() {
     }
 
     return ( 
-        <section>
+        <section id="randomJoke">
             { joke ? showJoke() : 'Charging Joke ...' }
         </section>
      );

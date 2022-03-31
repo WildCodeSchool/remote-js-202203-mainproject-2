@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getMovieById } from '../../indexedDb/indexedDbController';
 // import { backdrops } from './homePageDataSet';
 
-function MovieTile({ movie: { id: movieId } , isLandScape}){
+function MovieTile({ movie: { id: movieId } , isLandScape, showStats = false}){
 
     const [ movie, setMovie ] = useState(null);
     useEffect(async () => {
@@ -38,25 +38,24 @@ function MovieTile({ movie: { id: movieId } , isLandScape}){
             (movie) ?
             <Link to={`/movie/${movie.id}`} >
                 <div className={`${(isLandScape) ? 'landscape' : 'movie'}-card`}>
-                    <figure>
-                        <img 
-                            src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
-                            style={ { backgroundImage: `url(${getImageUrl()})` } }
-                            alt={movie.fullTitle}
-                            title={movie.fullTitle}
-                        />
-                        <figcaption>
-                            <strong>{movie.title}</strong>
-                            {  getTileSpan() }
-                        </figcaption>
-                    </figure>
+                <figure>
+                    <img 
+                        src={`./assets/images/template/blank-${(isLandScape) ? 'release' : 'poster'}.png`}
+                        style={ { backgroundImage: `url(${getImageUrl()})` } }
+                        alt={movie.fullTitle ?? movie.title}
+                        title={movie.fullTitle ?? movie.title}
+                    />
+                    <figcaption>
+                        <strong className={showStats === false && 'no-span'}>{movie.title}</strong>
+                        {  showStats && getTileSpan() }
+                    </figcaption>
+                </figure>
                 </div>
             </Link>
             :
             <p style={{color:' white'}}>Loading</p>
         }
         </>
-
     );
 }
 
@@ -66,11 +65,12 @@ MovieTile.propTypes = {
         rank: PropTypes.string,
         rankUpDown: PropTypes.string,
         title: PropTypes.string.isRequired,
-        fullTitle: PropTypes.string.isRequired,
+        fullTitle: PropTypes.string,
         image: PropTypes.string,
         imDbRating: PropTypes.string,
     }),
-    isLandScape: PropTypes.bool
+    isLandScape: PropTypes.bool,
+    showStats: PropTypes.bool
 };
 
 export default MovieTile;

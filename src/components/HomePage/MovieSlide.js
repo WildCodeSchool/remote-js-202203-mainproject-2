@@ -22,12 +22,11 @@ function MovieSlide({ movies, areTilesLandscape, slideId, slideTitle }) {
                     (movies?.length) 
                     ? <div className={`${(areTilesLandscape) ? 'landscape' : 'movie'}-list`}>
                         {
-                            movies.map((movie, index) => <MovieTile key={index} movie={movie} isLandScape={areTilesLandscape}/>)
+                            movies.map((movie, index) => <MovieTile key={index} movie={movie} isLandScape={areTilesLandscape} showStats={true}/>)
                         }
                     </div>
                     : <p className='loading-movies'>Loading Movies {loadingDotsArray[loadingDotsIndex]}</p>
                 }
-                
             </div>
 
         </div>

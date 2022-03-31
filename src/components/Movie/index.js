@@ -12,6 +12,7 @@ import { getMovieById } from '../../indexedDb/indexedDbController';
 // const movie = require('./../../oneFullMovie.json');
 // import movie from './oneFullMovie';
 
+
 function Movie() {
     const [movie, setMovie] = useState(null);
     

@@ -6,6 +6,7 @@ import SignupForm from './components/SplashScreen/SignupForm';
 import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
 import Movie from './components/Movie';
+import MovieLibrary from './components/MovieLibrary';
 import RandomJoke from './components/RandomJoke';
 
 import './assets/styles/app.css';
@@ -23,6 +24,8 @@ function App() {
           </Route>
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
+          <Route path='/library' element={<MovieLibrary />}/>
+
           { /* 
           TODO 👇 à déplacer dans le toast
           */}
