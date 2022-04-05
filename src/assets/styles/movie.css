@@ -31,7 +31,49 @@
     padding-bottom: 15px;
     opacity: 0;
 }
-    
+
+.fixed-menu .wrapper .closed-menu {
+    animation-duration: 0.6s;
+    animation-name: menu-out;
+}
+
+.fixed-menu .wrapper .opened-menu {
+    animation-duration: 0.6s;
+    animation-name: menu-in;
+    opacity: 1;
+    transform: translate(0, -25px);
+}
+
+@keyframes menu-in {
+    from {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, -30px);
+    }
+
+    100% {
+        transform: translate(0, -25px);
+        opacity: 1;
+    }
+}
+
+@keyframes menu-out {
+    from {
+        transform: translate(0, -25px);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(0, -30px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
 .fixed-menu .wrapper .pop-elem button {
     width: 48px;
     height: 48px;
@@ -44,6 +86,26 @@
     
 .fixed-menu .wrapper .pop-elem button i {
     font-size: 18px;
+}
+
+.fixed-menu .wrapper .pop-elem button .fa-eye-slash {
+    color: var(--base-lightpurple);
+}
+
+.fixed-menu .wrapper .pop-elem button .fa-heart {
+    color: var(--base-lightpurple);
+}
+
+.fixed-menu .wrapper .pop-elem button .liked {
+    color: var(--base-rednostonks);
+}
+
+.fixed-menu .wrapper .pop-elem button .fa-square {
+    color: var(--base-lightpurple);
+}
+
+.fixed-menu .wrapper .pop-elem button .owned {
+    color: var(--base-greenstonks);
 }
     
 .fixed-menu .wrapper #triggerMenu {
