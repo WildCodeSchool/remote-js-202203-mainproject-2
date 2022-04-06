@@ -5,16 +5,29 @@ import { getMovieById } from '../../indexedDb/indexedDbController';
 // import { backdrops } from './homePageDataSet';
 
 function MovieTile({ movie: propsMovie , isLandScape, showStats = false}){
-
+    const loadingDotsArray = [ '...', '·..', '··.', '···', '.··', '..·', ];
+    const [ loadingDotsIndex, setLoadingDotsIndex] = useState(0);
+    
     const [ movie, setMovie ] = useState(null);
     useEffect(async () => {
+        await setMovieState();
+        const interval = setInterval(() => {
+            setLoadingDotsIndex((i) => (i >= loadingDotsArray.length -1) ? 0 : i+1);
+        }, 100);
+        return () => clearInterval(interval);
+    }, []);
+
+    
+    async function setMovieState (){
         if(isLandScape){
             const m = await getMovieById(propsMovie.id);
             setMovie(m);
-        }else {
-            setMovie(propsMovie);
-        }
-    }, []);
+        }else setMovie(propsMovie);
+    }
+        
+    useEffect(async () => {
+        await setMovieState();
+    }, [propsMovie]);
 
 
     function getImageUrl(){
@@ -50,14 +63,14 @@ function MovieTile({ movie: propsMovie , isLandScape, showStats = false}){
                         title={movie.fullTitle ?? movie.title}
                     />
                     <figcaption>
-                        <strong className={showStats === false && 'no-span'}>{movie.title}</strong>
+                        <strong className={(showStats) ? 'no-span' : ''}>{movie.title}</strong>
                         {  showStats && getTileSpan() }
                     </figcaption>
                 </figure>
                 </div>
             </Link>
             :
-            <p style={{color:' white'}}>Loading</p>
+            <p className='loading-movie'>Loading Movie {loadingDotsArray[loadingDotsIndex]}</p>
         }
         </>
     );

@@ -304,39 +304,47 @@ const setOfFilms = [
 const genres = [
     {
         label: 'Action',
-        value: 'action'
+        value: 'Action'
     },
     {
         label: 'Comedy',
-        value: 'comedy'
+        value: 'Comedy'
     },
     {
         label: 'Fantasy',
-        value: 'Horror'
+        value: 'Fantasy'
     },
     {
         label: 'Mystery',
-        value: 'mystery'
+        value: 'Mystery'
     },
     {
         label: 'Horror',
-        value: 'horror'
+        value: 'Horror'
     },
     {
         label: 'Romance',
-        value: 'romance'
+        value: 'Romance'
     },
     {
         label: 'Sci-fi',
-        value: 'sf'
+        value: 'Sci-fi'
     },
     {
         label: 'Thriller',
-        value: 'thriller'
+        value: 'Thriller'
     },
     {
-        label: 'Western',
-        value: 'western'
+        label: 'Crime',
+        value: 'Crime'
+    },
+    {
+        label: 'Drama',
+        value: 'Drama'
+    },
+    {
+        label: 'Musical',
+        value: 'Musical'
     },
 ];
 
