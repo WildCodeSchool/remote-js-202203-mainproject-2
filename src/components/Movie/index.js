@@ -3,8 +3,8 @@ import GenreList from './GenreList';
 import ActorList from './ActorList';
 import MightLike from './MightLike';
 import Rating from './Rating';
+import MovieMenu from './MovieMenu';
 import React, { useEffect, useState } from 'react';
-
 import { useParams } from 'react-router';
 import { getMovieById } from '../../indexedDb/indexedDbController';
 import NavBar from '../NavBar';
@@ -57,6 +57,7 @@ function Movie() {
                         </div>
                     </div>
                 </div>
+                <MovieMenu />
             </div>}
             <NavBar />
         </section>
