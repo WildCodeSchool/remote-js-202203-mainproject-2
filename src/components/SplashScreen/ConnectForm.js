@@ -19,7 +19,7 @@ export default function ConnectForm(){
                         <input type="email" name="email" id="emailSignin" placeholder='E-mail*' />
                     </div>
                     <div className="form-row">
-                        <input type="text" name="password" id="passwordSignin" placeholder='Password*' />
+                        <input type="password" name="password" id="passwordSignin" placeholder='Password*' />
                     </div>
                     <div className="form-btn">
                         <button>SIGN IN</button>
