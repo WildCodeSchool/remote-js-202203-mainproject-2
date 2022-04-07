@@ -7,7 +7,6 @@ import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
 import Movie from './components/Movie';
 import MovieLibrary from './components/MovieLibrary';
-import RandomJoke from './components/RandomJoke';
 
 import './assets/styles/app.css';
 import React from 'react';

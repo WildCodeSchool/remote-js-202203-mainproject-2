@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 
 import GenreFilterBar from './GenresFilterBar';
 import MovieSlide from './MovieSlide';
-import SearchBar from './SearchBar';
+import HeadSearchBar from './HeadSearchBar';
 
 import '../../assets/styles/homePage.css';
 import NavBar from '../NavBar';
 import getImDbUrl from '../../utils/getImDbUrl';
 import { getAllMovies } from '../../indexedDb/indexedDbController';
+import JokeToaster from '../JokeToaster';
 
 const MAX_MOVIES_PER_SLIDE = 20; 
 
@@ -32,17 +33,17 @@ function HomePage(){
     const getPopularMovies = () => getMoviesFiltered(setPopularMoviesFiltered, popularMovies);
 
     const popularSeriesUrl = getImDbUrl('MostPopularTVs');
-    const [popularSeries, setPopularSeries] = useState(null);
+    const [popularSeries, setPopularSeries] = useState([]);
     const [popularSeriesFiltered, setPopularSeriesFiltered] = useState([]);
     const getPopularSeries = () => getMoviesFiltered(setPopularSeriesFiltered, popularSeries);
     
     const comingSoonUrl = getImDbUrl('ComingSoon');
-    const [comingSoon, setComingSoon] = useState(null);
+    const [comingSoon, setComingSoon] = useState([]);
     const [comingSoonFiltered, setComingSoonFiltered] = useState([]);
     const getComingSoon = () => getMoviesFiltered(setComingSoonFiltered, comingSoon);
     
     const inTheatersUrl = getImDbUrl('InTheaters');
-    const [inTheaters, setInTheaters] = useState(null);
+    const [inTheaters, setInTheaters] = useState([]);
     const [inTheatersFiltered, setInTheatersFiltered] = useState([]);
     const getInTheaters = () => getMoviesFiltered(setInTheatersFiltered, inTheaters);
     
@@ -102,7 +103,7 @@ function HomePage(){
             <div id="home">
                 <div className="wrapper-home">
                     
-                    <SearchBar />
+                    <HeadSearchBar />
 
                     <GenreFilterBar changeGenreFilter={(genreValue) => setGenreFilterSelected(genreValue)} />
 
@@ -131,9 +132,12 @@ function HomePage(){
                         </div>
                     </div>
                 </div>
+                <JokeToaster />
             </div>
 
+
             <NavBar />
+            
 
         </section>
     );
