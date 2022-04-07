@@ -1,0 +1,162 @@
+.searchRow{
+    border-style: solid;
+    padding: 10px;
+}
+
+#inputSearch{
+    width:100%;
+}
+
+#inputSearch input[type=text]{
+    height: 36px;
+    padding: 0 0 0 10px;
+    border: none;
+    background: var(--base-mediumpurple);
+    color: azure;
+}
+
+#inputSearch button{
+    height: 36px;
+    color: var(--base-white);
+    padding: 0 15px;
+    border: none;
+    background: var(--base-mediumpurple);
+}
+
+#inputSearch button:hover{
+    opacity: 0.80;
+    cursor: pointer;
+}
+
+#searchRowType {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#searchRowClassification {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+}
+
+#searchRowDate {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+#searchRowUserRate {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+#searchRowUserRate option{
+    text-align: center;
+}
+
+#searchRowSortBy {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+#searchRowSortBy select option{
+    text-align: center;
+}
+
+#searchBarWapper{
+    display: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#searchBar {
+    width: 100%;
+    color: azure;
+}
+
+#searchBar div fieldset {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#searchBar div fieldset input[type=text] {
+    flex-grow: 1;
+    height: 36px;
+    padding: 0 0 0 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background: var(--base-mediumpurple);
+    color: azure;
+}
+
+#searchBar div fieldset select {
+    flex-grow: 1;
+    height: 36px;
+    padding: 0 0 0 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background: var(--base-mediumpurple);
+    color: azure;
+}
+
+  .searchList{
+    display:none;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 60%;
+  }
+
+  .searchList:hover {
+    display: block;
+    position: fixed;
+    z-index: 99;
+  }
+
+  .searchBarInput{
+    width:100%;
+  }
+
+  .searchBarInput:focus ~ .searchList {
+    display: block;
+    position: fixed;
+    z-index: 99;
+  }
+
+  .searchBarInputValidate:focus ~ .searchList {
+    display: block;
+    position: fixed;
+    z-index: 99;
+  }
+
+  #movieListSearch {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #movieListSearch li {
+    border: 1px solid #ddd; 
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px; 
+    text-decoration: none; 
+    font-size: 18px; 
+    color: black; 
+    display: block; 
+  }
+  
+  #movieListSearch li:hover {
+    background-color: #eee; 
+  }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import GenreFilterBar from './GenresFilterBar';
 import MovieSlide from './MovieSlide';
-import SearchBar from './SearchBar';
+import HeadSearchBar from './HeadSearchBar';
 
 import '../../assets/styles/homePage.css';
 import NavBar from '../NavBar';
@@ -102,7 +102,7 @@ function HomePage(){
             <div id="home">
                 <div className="wrapper-home">
                     
-                    <SearchBar />
+                    <HeadSearchBar />
 
                     <GenreFilterBar changeGenreFilter={(genreValue) => setGenreFilterSelected(genreValue)} />
 

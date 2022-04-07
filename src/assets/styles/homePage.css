@@ -257,43 +257,6 @@
     color: var(--base-rednostonks);
 }
 
-#searchBar {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-#searchBar form {
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-
-#searchBar form fieldset {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-#searchBar form fieldset input {
-    flex-grow: 1;
-    height: 36px;
-    padding: 0 0 0 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    background: var(--base-mediumpurple);
-}
-
-#searchBar form fieldset button {
-    height: 36px;
-    color: var(--base-white);
-    padding: 0 15px;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    background: var(--base-mediumpurple);
-}
-
-
 #genreFilters {
     width: 100%;
 }
