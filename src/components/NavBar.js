@@ -9,7 +9,7 @@ export default function NavBar() {
           <i className="fa-solid fa-house"></i>
         </button>
       </NavLink>
-      <NavLink to="/movies" className={({ isActive }) => isActive ? 'active' : ''}>
+      <NavLink to="/library" className={({ isActive }) => isActive ? 'active' : ''}>
         <button>
           <i className="fa-solid fa-film"></i>
         </button>

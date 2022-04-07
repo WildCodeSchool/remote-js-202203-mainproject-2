@@ -10,7 +10,6 @@ function MovieLibrary({ type }) {
 
     React.useEffect(async () => {
         type === 'loved' ? entireLibrary = await getLovedMovies() : entireLibrary = await getLibrary();
-        entireLibrary = await getLibrary();
         setLibrary(entireLibrary.slice(0, toLoad));
     }, []);
     
