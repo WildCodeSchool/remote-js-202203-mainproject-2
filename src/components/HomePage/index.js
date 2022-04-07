@@ -1,19 +1,21 @@
-//* 👇 Pour le dev uniquement
-// import { setOfFilms } from './homePageDataSet';
-
-//* 👇 Pour la prod
 import { useEffect, useState } from 'react';
 
 import GenreFilterBar from './GenresFilterBar';
 import MovieSlide from './MovieSlide';
-import SearchBar from './SearchBar';
+import HeadSearchBar from './HeadSearchBar';
 
 import '../../assets/styles/homePage.css';
 import NavBar from '../NavBar';
 import getImDbUrl from '../../utils/getImDbUrl';
+import { getAllMovies } from '../../indexedDb/indexedDbController';
+import JokeToaster from '../JokeToaster';
 
+const MAX_MOVIES_PER_SLIDE = 20; 
 
 function HomePage(){
+
+    const [genreFilterSelected, setGenreFilterSelected] = useState('*');
+    const [ fullMovies, setFullMovies ] = useState([]);
     
     //* 👇 Pour le dev seulement --> sinon à passer en props ou autre
     const user = {
@@ -24,35 +26,65 @@ function HomePage(){
             return `${this.firstName} ${this.lastName}`;
         } 
     };
-
-    //* 👇 Pour le dev uniquement
-    // const popularMovies = setOfFilms.slice(0, 7);
-    // const inTheaters = setOfFilms.slice(0, 4);
-
-    //* 👇 Pour la prod
-    const popularMoviesUrl = getImDbUrl('MostPopularMovies');
-    const [popularMovies, setPopularMovies] = useState(null);
     
+    const popularMoviesUrl = getImDbUrl('MostPopularMovies');
+    const [popularMovies, setPopularMovies] = useState([]);
+    const [popularMoviesFiltered, setPopularMoviesFiltered] = useState([]);
+    const getPopularMovies = () => getMoviesFiltered(setPopularMoviesFiltered, popularMovies);
+
     const popularSeriesUrl = getImDbUrl('MostPopularTVs');
-    const [popularSeries, setPopularSeries] = useState(null);
+    const [popularSeries, setPopularSeries] = useState([]);
+    const [popularSeriesFiltered, setPopularSeriesFiltered] = useState([]);
+    const getPopularSeries = () => getMoviesFiltered(setPopularSeriesFiltered, popularSeries);
     
     const comingSoonUrl = getImDbUrl('ComingSoon');
-    const [comingSoon, setComingSoon] = useState(null);
-
+    const [comingSoon, setComingSoon] = useState([]);
+    const [comingSoonFiltered, setComingSoonFiltered] = useState([]);
+    const getComingSoon = () => getMoviesFiltered(setComingSoonFiltered, comingSoon);
+    
     const inTheatersUrl = getImDbUrl('InTheaters');
-    const [inTheaters, setInTheaters] = useState(null);
-
+    const [inTheaters, setInTheaters] = useState([]);
+    const [inTheatersFiltered, setInTheatersFiltered] = useState([]);
+    const getInTheaters = () => getMoviesFiltered(setInTheatersFiltered, inTheaters);
+    
     const controller = new AbortController();
     const signal = controller.signal;
-
-    useEffect(() => {
-         fetch(popularMoviesUrl, { signal }).then((response) => response.json()).then((data) => setPopularMovies(data.items));
-         fetch(popularSeriesUrl, { signal }).then((response) => response.json()).then((data) => setPopularSeries(data.items));
-         fetch(comingSoonUrl, { signal }).then((response) => response.json()).then((data) => setComingSoon(data.items));
-        fetch(inTheatersUrl, { signal }).then((response) => response.json()).then((data) => setInTheaters(data.items));
+    
+    useEffect(async () => {
+        fetchMovies(popularMoviesUrl, signal, setPopularMovies, setPopularMoviesFiltered);
+        fetchMovies(popularSeriesUrl, signal, setPopularSeries, setPopularSeriesFiltered);
+        fetchMovies(comingSoonUrl, signal, setComingSoon, setComingSoonFiltered);
+        fetchMovies(inTheatersUrl, signal, setInTheaters, setInTheatersFiltered);
+        setFullMovies(await getAllMovies());
         return () => controller.abort();
      }, []);
 
+    useEffect(() => {
+        getPopularMovies();
+        getPopularSeries();
+        getComingSoon();
+        getInTheaters();
+    }, [genreFilterSelected]);
+ 
+
+    function getMoviesFiltered(setMovieFilteredState, moviesNotFiltered) {
+        if(genreFilterSelected === '*')  return setMovieFilteredState(moviesNotFiltered);
+        const filteredMovies = [];
+        moviesNotFiltered.forEach((movie) => {
+            const fullMovie = fullMovies.find((fullMovie) => fullMovie.id === movie.id);
+            if (fullMovie) { filteredMovies.push(fullMovie); } 
+        });
+        const filteredMoviesByGenre = filteredMovies.filter(movie => movie.genreList?.find(genre => genre.key === genreFilterSelected));
+        setMovieFilteredState(filteredMoviesByGenre);
+    }
+
+    function fetchMovies(url, signal, setMovies, setMoviesFiltered){
+        fetch(url, {signal}).then(res => res.json()).then((data) => {
+            const movies = data.items.slice(0, MAX_MOVIES_PER_SLIDE);
+            setMovies(movies);
+            setMoviesFiltered(movies);
+        });
+    }
     
     return (
         <section id="mainApp">
@@ -71,9 +103,9 @@ function HomePage(){
             <div id="home">
                 <div className="wrapper-home">
                     
-                    <SearchBar />
+                    <HeadSearchBar />
 
-                    <GenreFilterBar />
+                    <GenreFilterBar changeGenreFilter={(genreValue) => setGenreFilterSelected(genreValue)} />
 
                     <div id="moviesReturned">
                         <div className="scrollable">
@@ -91,19 +123,21 @@ function HomePage(){
                                     {/* 
                                     //* 👇 Pour la prod
                                     */}
-                                    <MovieSlide movies={(popularMovies)} slideTitle={'Popular Movies'} slideId={'trending-now'} />
-                                    <MovieSlide movies={(popularSeries)} slideTitle={'Popular Series'} slideId={'popular-series'} />
-                                    <MovieSlide movies={(comingSoon)} slideTitle={'Coming soon'} slideId={'coming-soon'} />
-                                    <MovieSlide movies={(inTheaters)} slideTitle={'In Theaters'} slideId={'new-release'} areTilesLandscape={true} />
-                                    
+                                    <MovieSlide movies={popularMoviesFiltered} slideTitle={'Popular Movies'} slideId={'trending-now'} />
+                                    <MovieSlide movies={popularSeriesFiltered} slideTitle={'Popular Series'} slideId={'popular-series'} />
+                                    <MovieSlide movies={comingSoonFiltered} slideTitle={'Coming soon'} slideId={'coming-soon'} />
+                                    <MovieSlide movies={inTheatersFiltered} slideTitle={'In Theaters'} slideId={'new-release'} areTilesLandscape={true} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <JokeToaster />
             </div>
 
+
             <NavBar />
+            
 
         </section>
     );

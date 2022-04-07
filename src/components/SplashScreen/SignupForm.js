@@ -22,7 +22,7 @@ function SignupForm(){
                         <input type="email" name="email" id="emailSignup" placeholder='E-mail*' />
                     </div>
                     <div className="form-row">
-                        <input type="text" name="password" id="passwordSignup" placeholder='Password*' />
+                        <input type="password" name="password" id="passwordSignup" placeholder='Password*' />
                     </div>
                     <div className="form-btn">
                         <button>SIGN UP</button>
