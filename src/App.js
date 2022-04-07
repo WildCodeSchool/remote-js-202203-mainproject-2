@@ -33,10 +33,8 @@ function App() {
             <Route path='/profile' element={<InfosProfile />} />
             <Route path='/profile/edit' element={<EditProfile />} />
           </Route>
-          { /* 
-          TODO 👇 à déplacer dans le toast
-          */}
-          <Route path='/joke' element={<RandomJoke />}/>
+          <Route path='/library' element={<MovieLibrary type={'all'}/>}/>
+          <Route path='/loved' element={<MovieLibrary type={'loved'}/>}/>
         </Routes>
       </Router>
     </div>

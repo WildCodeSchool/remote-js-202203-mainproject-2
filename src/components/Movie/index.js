@@ -57,7 +57,7 @@ function Movie() {
                         </div>
                     </div>
                 </div>
-                <MovieMenu />
+                <MovieMenu movieId={movie.id} isWatched={movie.isWatched ?? null} isLiked={movie.isLiked ?? null} isOwned={movie.isOwned ?? null} />
             </div>}
             <NavBar />
         </section>

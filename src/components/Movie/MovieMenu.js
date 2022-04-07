@@ -1,24 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { setIsWatched, setIsLiked, setIsOwned } from './../../indexedDb/indexedDbController';
 
-function MovieMenu() {
-    // TODO : Initialiser les états avec les données récupérées dans l'indexedDb.
+function MovieMenu({ movieId, isWatched, isLiked, isOwned }) {
     const [elementClassName, setElementClassName] = React.useState('');
-    const [watched, setWatched] = React.useState(false);
-    const [liked, setLiked] = React.useState(0);
-    const [owned, setOwned] = React.useState(false);
+    const [watched, setWatched] = React.useState(isWatched === 0 ? false : true);
+    const [liked, setLiked] = React.useState(isLiked ?? 0);
+    const [owned, setOwned] = React.useState(isOwned === 0 ? false : true);
 
-    // TODO : Changer les données enregistrées dans l'indexedDb à chaque changement d'état.
     function handleWatch() {
+        const value = watched === true ? 0 : 1;
         setWatched(!watched);
+        setIsWatched(movieId, value);
     }
 
     function handleLike() {
         setLiked(liked + 1);
-        liked === 2 && setLiked(0);
+        setIsLiked(movieId, liked + 1);
+
+        if (liked === 2) {
+            setLiked(0);
+            setIsLiked(movieId, 0);
+        }
     }
 
     function handleOwn() {
+        const value = owned === true ? 0 : 1;
         setOwned(!owned);
+        setIsOwned(movieId, value);
     }
 
     function handleMenu() {
@@ -55,5 +64,12 @@ function MovieMenu() {
         </div>
     );
 }
+
+MovieMenu.propTypes = {
+    movieId: PropTypes.string.isRequired,
+    isWatched: PropTypes.number,
+    isLiked: PropTypes.number,
+    isOwned: PropTypes.number
+};
 
 export default MovieMenu;
