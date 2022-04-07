@@ -12,7 +12,7 @@ function RetrievePassword(){
           <form>
               <fieldset>
                   <div className="form-row">
-                      <input type="email" name="email" id="emailSignin" placeholder='E-mail*' />
+                      <input type="email" name="email" id="emailSignin" placeholder='E-mail*' required />
                   </div>
                   <div className="form-btn">
                       <button>SEND E-MAIL</button>

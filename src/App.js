@@ -11,6 +11,9 @@ import RandomJoke from './components/RandomJoke';
 
 import './assets/styles/app.css';
 import React from 'react';
+import UserProfile from './components/UserProfile';
+import EditProfile from './components/UserProfile/EditProfile';
+import InfosProfile from './components/UserProfile/InfosProfile';
 
 function App() {
 
@@ -27,7 +30,10 @@ function App() {
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
           <Route path='/library' element={<MovieLibrary />}/>
-
+          <Route path='/profile' element={<UserProfile />}>
+            <Route path='/profile' element={<InfosProfile />} />
+            <Route path='/profile/edit' element={<EditProfile />} />
+          </Route>
           { /* 
           TODO 👇 à déplacer dans le toast
           */}

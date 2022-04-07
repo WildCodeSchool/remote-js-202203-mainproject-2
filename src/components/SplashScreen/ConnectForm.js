@@ -16,10 +16,10 @@ export default function ConnectForm(){
             <form onSubmit={handleSubmit} method="POST">
                 <fieldset>
                     <div className="form-row">
-                        <input type="email" name="email" id="emailSignin" placeholder='E-mail*' />
+                        <input type="email" name="email" id="emailSignin" placeholder='E-mail*' required />
                     </div>
                     <div className="form-row">
-                        <input type="text" name="password" id="passwordSignin" placeholder='Password*' />
+                        <input type="password" name="password" id="passwordSignin" placeholder='Password*' required />
                     </div>
                     <div className="form-btn">
                         <button>SIGN IN</button>

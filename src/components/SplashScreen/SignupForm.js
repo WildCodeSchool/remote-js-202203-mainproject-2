@@ -16,13 +16,13 @@ function SignupForm(){
             <form onSubmit={handleSubmit} method="POST">
                 <fieldset>
                     <div className="form-row">
-                        <input type="text" name="firstname" id="firstnameSignup" placeholder='Firstname' />
+                        <input type="text" name="firstname" id="firstnameSignup" placeholder='Firstname' required />
                     </div>
                     <div className="form-row">
-                        <input type="email" name="email" id="emailSignup" placeholder='E-mail*' />
+                        <input type="email" name="email" id="emailSignup" placeholder='E-mail*' required />
                     </div>
                     <div className="form-row">
-                        <input type="text" name="password" id="passwordSignup" placeholder='Password*' />
+                        <input type="password" name="password" id="passwordSignup" placeholder='Password*' required />
                     </div>
                     <div className="form-btn">
                         <button>SIGN UP</button>
