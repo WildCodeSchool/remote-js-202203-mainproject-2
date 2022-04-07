@@ -4,14 +4,18 @@ import NavBar from '../NavBar';
 import MovieTile from './../HomePage/MovieTile';
 import LibrarySearch from './LibrarySearch';
 import { getLibrary } from './../../indexedDb/indexedDbController';
+import PropTypes from 'prop-types';
 
 function MovieLibrary({ type }) {
     let entireLibrary = [];
 
     React.useEffect(async () => {
-        type === 'loved' ? entireLibrary = await getLovedMovies() : entireLibrary = await getLibrary();
+        entireLibrary = await getLibrary();
+        if (type === 'loved') {
+            entireLibrary = entireLibrary.filter((movie) => movie.isLiked === 1);
+        }
         setLibrary(entireLibrary.slice(0, toLoad));
-    }, []);
+    }, [type]);
     
     const [searchResults, setSearchResults] = React.useState('');
     const [toLoad, setToLoad] = React.useState(30);
@@ -61,5 +65,9 @@ function MovieLibrary({ type }) {
         </section>
     );
 }
+
+MovieLibrary.propTypes = {
+    type: PropTypes.string
+};
 
 export default MovieLibrary;

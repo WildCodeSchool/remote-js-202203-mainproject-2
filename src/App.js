@@ -25,7 +25,8 @@ function App() {
           </Route>
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
-          <Route path='/library' element={<MovieLibrary />}/>
+          <Route path='/library' element={<MovieLibrary type={'all'}/>}/>
+          <Route path='/loved' element={<MovieLibrary type={'loved'}/>}/>
         </Routes>
       </Router>
     </div>
