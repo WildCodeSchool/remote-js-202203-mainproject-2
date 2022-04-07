@@ -35,6 +35,11 @@ export async function getAllMovies() {
     return movies;
 }
 
+export async function getLovedMovies() {
+    const library = await db.movies.where('isLiked').equals(1).toArray();
+    return library;
+}
+
 function isLastUpdateMoreThanXDays(movieDate, days = 1){
     const now = (new Date()).getTime();
     const movieTime = movieDate.getTime();
