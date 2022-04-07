@@ -53,7 +53,7 @@ function Movie() {
                                 </div>
                             </div>
                             <ActorList listTitle={'Cast List'} actorList={movie.actorList} />
-                            <MightLike similars={movie.similars} />
+                            <MightLike similars={{movies: movie.similars, title: 'You Might Also Like'}} />
                         </div>
                     </div>
                 </div>
