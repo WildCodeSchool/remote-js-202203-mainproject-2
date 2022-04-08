@@ -17,15 +17,10 @@ function MightLike({similars}) {
 }
 
 MightLike.propTypes = {
-    props: PropTypes.arrayOf(
-        PropTypes.object.isRequired
-    ),
-    similars: PropTypes.arrayOf(
-        PropTypes.object.isRequired
-    ),
-    title: PropTypes.arrayOf(
-        PropTypes.object.isRequired
-    )
+    similars: PropTypes.shape({
+        title: PropTypes.string,
+        movies: PropTypes.array
+    })
 };
 
 export default MightLike;
