@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../assets/styles/HeadSearchBar.css';
 import { Link } from 'react-router-dom';
+import getImDbUrl from '../../utils/getImDbUrl';
 
 function HeadSearchBar(){
 
@@ -32,15 +33,12 @@ function HeadSearchBar(){
     }
 
     function btnSearch(){
-        let urlMovie;
         rateOptionParam();
         releaseDateOptionParam();
 
-        if(advanceSearchActive){
-            urlMovie = `https://imdb-api.com/API/AdvancedSearch/k_xxgrvftl?title=${searchValue}&title_type=${typeOption}&user_rating=${userRateOption}&release_date=${releaseDateOption}&certificates=${classificationOption}&sort=${triOption}`;
-        }else{
-            urlMovie = `https://imdb-api.com/en/API/SearchAll/k_xxgrvftl/${searchValue}`;
-        }
+        let urlMovie = (advanceSearchActive)
+            ? getImDbUrl('AdvancedSearch') + `?title=${searchValue}&title_type=${typeOption}&user_rating=${userRateOption}&release_date=${releaseDateOption}&certificates=${classificationOption}&sort=${triOption}`
+            : getImDbUrl('SearchAll') + `${searchValue}`;
         fetch(urlMovie)
         .then(res => res.json())
         .then(
