@@ -1,0 +1,294 @@
+.profile-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 56px;
+  padding: 0 25px;
+  background: var(--base-darkblue);
+}
+
+.profile-content .profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 25px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.profile nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* ********************************************************************************************* */
+/* *** HEADER - AVATAR + NAME ****************************************************************** */
+/* ********************************************************************************************* */
+.profile-content .profile-wrapper .user-header {
+  padding: 50px 0;
+}
+
+.profile-content .profile-wrapper .user-header figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-content .profile-wrapper .user-header figure img {
+  width: 128px;
+  height: 128px;
+  border-radius: 128px;
+}
+
+.profile-content .profile-wrapper .user-header figure figcaption h2 {
+  font-size: 32px;
+  color: var(--base-white);
+}
+
+/* ********************************************************************************************* */
+/* *** STATS *********************************************************************************** */
+/* ********************************************************************************************* */
+.profile-content .profile-wrapper .user-stats {
+  padding: 15px 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.profile-content .profile-wrapper .user-stats ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+
+.profile-content .profile-wrapper .user-stats ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profile-content .profile-wrapper .user-stats ul li:nth-child(2) {
+  border-left: 1px solid var(--base-darkpurple);
+  border-right: 1px solid var(--base-darkpurple);
+}
+
+.profile-content .profile-wrapper .user-stats ul li h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.profile-content .profile-wrapper .user-stats ul li span {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* ********************************************************************************************* */
+/* *** FAVORITE GENRES ************************************************************************* */
+/* ********************************************************************************************* */
+.profile-content .profile-wrapper .user-genres {
+  padding-top: 25px;
+}
+
+.profile-content .profile-wrapper .user-genres h3 {
+  color: var(--base-white);
+}
+
+.profile-content .profile-wrapper .user-genres .list-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-content .profile-wrapper .user-genres .list-genres button {
+  color: var(--base-white);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 25px;
+  margin: 0 0 15px 0;
+  border: none;
+  background: none;
+}
+
+.profile-content .profile-wrapper .user-genres a {
+  display: block;
+  font-size: 16px;
+  font-weight: 200;
+  color: var(--base-white);
+  text-align: right;
+  text-decoration: none;
+}
+
+/* ********************************************************************************************* */
+/* *** EDIT DATAS BUTTON *********************************************************************** */
+/* ********************************************************************************************* */
+.profile-content .profile-wrapper .user-edit-button {
+  padding: 15px 0;
+  margin-top: 25px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.profile-content .profile-wrapper .user-edit-button a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  text-decoration: none;
+}
+.profile-content .profile-wrapper .user-edit-button a:after {
+  content: "›";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  font-size: 60px;
+  color: var(--base-darkpurple);
+  transform: translateY(-57%);
+}
+
+.profile-content .profile-wrapper .user-edit-button a span {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--base-darkpurple);
+  line-height: 1;
+}
+
+.profile-content .profile-wrapper .user-edit-button a em {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--base-darkpurple);
+}
+
+/* ********************************************************************************************* */
+/* *** MOVIE MOST VIEWED *********************************************************************** */
+/* ********************************************************************************************* */
+.user-most-viewed .movie-alike {
+  padding-top: 25px;
+  background: var(--base-darkpurple);
+}
+
+.user-most-viewed .movie-alike h3 {
+  margin: 0 0 0 25px;
+  color: var(--base-white);
+}
+
+.user-most-viewed .movie-alike .wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.user-most-viewed .movie-alike .wrapper .alike-list {
+  display: flex;
+  flex-direction: row;
+  margin-right: 0px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.user-most-viewed .movie-alike .wrapper .alike-list::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.user-most-viewed .movie-alike .wrapper .alike-list .movie-card {
+  margin: 0 10px 0 0;
+}
+
+.user-most-viewed .movie-alike .wrapper .alike-list .movie-card figure {
+  position: relative;
+  width: var(--movie-width);
+}
+.user-most-viewed .movie-alike .wrapper .alike-list .movie-card figure:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: -moz-linear-gradient(
+    top,
+    rgba(125, 185, 232, 0) 0%,
+    rgba(32, 15, 51, 1) 85%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(125, 185, 232, 0) 0%,
+    rgba(32, 15, 51, 1) 85%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(125, 185, 232, 0) 0%,
+    rgba(32, 15, 51, 1) 85%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#200f33',GradientType=0 );
+  z-index: 1;
+}
+
+.user-most-viewed .movie-alike .wrapper .alike-list .movie-card figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.user-most-viewed
+  .movie-alike
+  .wrapper
+  .alike-list
+  .movie-card
+  figure
+  figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 14px;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+.user-most-viewed
+  .movie-alike
+  .wrapper
+  .alike-list
+  .movie-card
+  figure
+  figcaption
+  strong {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--base-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-most-viewed
+  .movie-alike
+  .wrapper
+  .alike-list
+  .movie-card
+  figure
+  figcaption
+  span.score {
+  font-size: 12px;
+  color: var(--base-yellowscore);
+}

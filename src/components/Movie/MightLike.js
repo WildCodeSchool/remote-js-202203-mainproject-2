@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MightLikeCard from './MightLikeCard';
 
-function MightLike({ similars }) {
+function MightLike({similars}) {
+
     return (
         <div className="movie-alike">
-            <h3>You Might Also Like</h3>
+            <h3>{similars.title}</h3>
             <div className="wrapper">
                 <div className="alike-list">
-                    {similars.map((similar) => <MightLikeCard key={similar.id} movie={similar}/>)}
+                    {similars.movies.map((similar) => <MightLikeCard key={similar.id} movie={similar}/>)}
                 </div>
             </div>
         </div>
@@ -16,7 +17,13 @@ function MightLike({ similars }) {
 }
 
 MightLike.propTypes = {
+    props: PropTypes.arrayOf(
+        PropTypes.object.isRequired
+    ),
     similars: PropTypes.arrayOf(
+        PropTypes.object.isRequired
+    ),
+    title: PropTypes.arrayOf(
         PropTypes.object.isRequired
     )
 };

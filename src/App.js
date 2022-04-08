@@ -10,6 +10,9 @@ import MovieLibrary from './components/MovieLibrary';
 
 import './assets/styles/app.css';
 import React from 'react';
+import UserProfile from './components/UserProfile';
+import EditProfile from './components/UserProfile/EditProfile';
+import InfosProfile from './components/UserProfile/InfosProfile';
 
 function App() {
 
@@ -25,6 +28,11 @@ function App() {
           </Route>
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
+          <Route path='/library' element={<MovieLibrary />}/>
+          <Route path='/profile' element={<UserProfile />}>
+            <Route path='/profile' element={<InfosProfile />} />
+            <Route path='/profile/edit' element={<EditProfile />} />
+          </Route>
           <Route path='/library' element={<MovieLibrary type={'all'}/>}/>
           <Route path='/loved' element={<MovieLibrary type={'loved'}/>}/>
         </Routes>
