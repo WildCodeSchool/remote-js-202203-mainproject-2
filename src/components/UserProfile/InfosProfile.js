@@ -5,7 +5,6 @@ import MightLike from '../Movie/MightLike';
 
 export default function InfosProfile() {
   const { mainUser } = useContext(UserProfileContext);
-  console.log(mainUser);
 
   const movie = {
     similars: [

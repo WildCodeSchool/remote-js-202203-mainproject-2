@@ -5,7 +5,6 @@ export default function EnterForm(){
     const opening = new Audio('./assets/sounds/opening.mp3');
     const start = () => {
       opening.addEventListener('ended', () => {
-        console.log('prout');
         document.getElementById('enterApp').click();
       });
       opening.play();
