@@ -6,7 +6,7 @@ import LibrarySearch from './LibrarySearch';
 import { getLibrary } from './../../indexedDb/indexedDbController';
 import PropTypes from 'prop-types';
 
-function MovieLibrary({ type }) {
+function MovieLibrary({ type, title }) {
     let entireLibrary = [];
 
     React.useEffect(async () => {
@@ -50,7 +50,7 @@ function MovieLibrary({ type }) {
                 <div className="wrapper-library">
                     <div className="scrollable">
                         <div className="wrapper">
-                            <h1>My Movie Library</h1>
+                            <h1>{title ?? 'My Movie Library'}</h1>
                             <LibrarySearch handleSearch={handleSearch}/>
                             <div className='library'>
                                 {library.filter((movie) => movie.title.toLowerCase()
@@ -67,7 +67,8 @@ function MovieLibrary({ type }) {
 }
 
 MovieLibrary.propTypes = {
-    type: PropTypes.string
+    type: PropTypes.string,
+    title: PropTypes.string.isRequired
 };
 
 export default MovieLibrary;
