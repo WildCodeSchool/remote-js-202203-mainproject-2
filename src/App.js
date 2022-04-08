@@ -7,6 +7,7 @@ import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
 import Movie from './components/Movie';
 import MovieLibrary from './components/MovieLibrary';
+import RandomMovie from './components/Movie/RandomMovie';
 
 import './assets/styles/app.css';
 import React from 'react';
@@ -35,6 +36,7 @@ function App() {
           </Route>
           <Route path='/library' element={<MovieLibrary type={'all'}/>}/>
           <Route path='/loved' element={<MovieLibrary type={'loved'}/>}/>
+          <Route path='/shuffle' element={<RandomMovie/>}/>
         </Routes>
       </Router>
     </div>
