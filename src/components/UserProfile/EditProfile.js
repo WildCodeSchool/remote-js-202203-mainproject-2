@@ -1,12 +1,8 @@
 
-function EditProfile() {
+export default function EditProfile() {
   return (
-    <section id="profile">
-      <div className="content">
-        Edit profile
-      </div>
-    </section>
+    <div className="content">
+      Edit profile
+    </div>
   );
 }
-
-export default EditProfile;

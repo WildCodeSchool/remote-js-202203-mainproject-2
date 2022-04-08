@@ -7,10 +7,13 @@ import RetrievePassword from './components/SplashScreen/RetrievePassword';
 import EnterForm from './components/SplashScreen/EnterForm';
 import Movie from './components/Movie';
 import MovieLibrary from './components/MovieLibrary';
-import RandomJoke from './components/RandomJoke';
+import RandomMovie from './components/Movie/RandomMovie';
 
 import './assets/styles/app.css';
 import React from 'react';
+import UserProfile from './components/UserProfile';
+import EditProfile from './components/UserProfile/EditProfile';
+import InfosProfile from './components/UserProfile/InfosProfile';
 
 function App() {
 
@@ -27,11 +30,13 @@ function App() {
           <Route path='/home' element={<HomePage />}/>
           <Route path='/movie/:id' element={<Movie />}/>
           <Route path='/library' element={<MovieLibrary />}/>
-
-          { /* 
-          TODO 👇 à déplacer dans le toast
-          */}
-          <Route path='/joke' element={<RandomJoke />}/>
+          <Route path='/profile' element={<UserProfile />}>
+            <Route path='/profile' element={<InfosProfile />} />
+            <Route path='/profile/edit' element={<EditProfile />} />
+          </Route>
+          <Route path='/library' element={<MovieLibrary type={'all'} title={'My Movie Library'}/>}/>
+          <Route path='/loved' element={<MovieLibrary type={'loved'} title={'My Loved Movies'}/>}/>
+          <Route path='/shuffle' element={<RandomMovie/>}/>
         </Routes>
       </Router>
     </div>

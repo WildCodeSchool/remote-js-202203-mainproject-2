@@ -3,8 +3,8 @@ import GenreList from './GenreList';
 import ActorList from './ActorList';
 import MightLike from './MightLike';
 import Rating from './Rating';
+import MovieMenu from './MovieMenu';
 import React, { useEffect, useState } from 'react';
-
 import { useParams } from 'react-router';
 import { getMovieById } from '../../indexedDb/indexedDbController';
 import NavBar from '../NavBar';
@@ -53,10 +53,11 @@ function Movie() {
                                 </div>
                             </div>
                             <ActorList listTitle={'Cast List'} actorList={movie.actorList} />
-                            <MightLike similars={movie.similars} />
+                            <MightLike similars={{movies: movie.similars, title: 'You Might Also Like'}} />
                         </div>
                     </div>
                 </div>
+                <MovieMenu movieId={movie.id} isWatched={movie.isWatched ?? null} isLiked={movie.isLiked ?? null} isOwned={movie.isOwned ?? null} />
             </div>}
             <NavBar />
         </section>
