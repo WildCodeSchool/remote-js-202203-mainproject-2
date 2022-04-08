@@ -110,9 +110,6 @@ function HomePage(){
                     <div id="moviesReturned">
                         <div className="scrollable">
                             <div className="wrapper">
-                                <div id="searchResults">
-                                   <h4>Search results</h4>
-                                </div>
                                 <div id="moreMovies">
                                     {/* 
                                     //* 👇 Pour le dev uniquement
