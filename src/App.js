@@ -34,8 +34,8 @@ function App() {
             <Route path='/profile' element={<InfosProfile />} />
             <Route path='/profile/edit' element={<EditProfile />} />
           </Route>
-          <Route path='/library' element={<MovieLibrary type={'all'}/>}/>
-          <Route path='/loved' element={<MovieLibrary type={'loved'}/>}/>
+          <Route path='/library' element={<MovieLibrary type={'all'} title={'My Movie Library'}/>}/>
+          <Route path='/loved' element={<MovieLibrary type={'loved'} title={'My Loved Movies'}/>}/>
           <Route path='/shuffle' element={<RandomMovie/>}/>
         </Routes>
       </Router>
